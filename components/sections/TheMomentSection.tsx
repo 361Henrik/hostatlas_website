@@ -83,7 +83,7 @@ export default function TheMomentSection() {
       </div>
 
       {/* Verbatim callout section — full width */}
-      <ScrollReveal className="relative w-full overflow-hidden" style={{ height: "60vh", minHeight: "400px" }}>
+      <ScrollReveal className="relative w-full overflow-hidden h-[60vh] min-h-[400px]">
         <img
           src={IMAGES.moment}
           alt=""
