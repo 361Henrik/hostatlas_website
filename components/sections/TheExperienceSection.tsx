@@ -40,10 +40,22 @@ const STEPS = [
   },
 ];
 
-const VERBATIMS = [
-  "That ruin on the hillside — a 12th century watchtower. The story was extraordinary.",
-  "I spent two hours on deck just reading about what we were passing. Couldn\u2019t put it down.",
-  "My wife and I kept pointing things out to each other. Best afternoon of the whole trip.",
+const POI_CARDS = [
+  {
+    category: "History",
+    title: "Medieval fortification · c.\u00a01280",
+    sub: "340m ahead",
+  },
+  {
+    category: "Local producers",
+    title: "Weingut Becker estate · Riesling",
+    sub: "Since 1847",
+  },
+  {
+    category: "Geology",
+    title: "Devonian slate formation",
+    sub: "380 million years old",
+  },
 ];
 
 export default function TheExperienceSection() {
@@ -57,28 +69,86 @@ export default function TheExperienceSection() {
               The Experience
             </p>
             <h2 className="font-display text-[28px] md:text-[40px] leading-tight text-foreground">
-              What if that moment on deck had an answer?
+              What if the answer were already there?
             </h2>
             <p className="font-body text-lg text-foreground max-w-[600px] mt-6">
-              HostAtlas is a location-aware story layer — available on the
-              guest&apos;s own device, triggered by where the vessel is,
-              designed around one principle: the world comes first. The screen
-              is only there when the guest reaches for it.
+              The Host Atlas introduces a layer of context — shaped by place,
+              and revealed only when the guest reaches for it. There is no app
+              to download. No account to create. No announcement to listen out
+              for.
             </p>
           </ScrollReveal>
 
-          {/* Film placeholder */}
+          {/* AR phone mockup — landscape orientation */}
           <ScrollReveal delay={80} className="mt-10">
-            <div className="aspect-video w-full rounded-lg bg-foreground border border-border flex flex-col items-center justify-center gap-4">
-              <div className="w-16 h-16 rounded-full border border-white/30 flex items-center justify-center">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M8 5.14v14l11-7-11-7z" fill="white" fillOpacity="0.8" />
-                </svg>
+            <div
+              className="w-full rounded-xl overflow-hidden relative bg-deep-green"
+              style={{ aspectRatio: "16/9" }}
+            >
+              {/* Status bar */}
+              <div className="absolute top-0 left-0 right-0 flex items-center justify-between px-4 py-2 bg-black/30">
+                <span className="font-body text-[11px] text-white/90 font-medium">
+                  The Host Atlas · Live · Rhine Valley
+                </span>
+                <span className="font-body text-[11px] text-white/60">●</span>
               </div>
-              <p className="font-body text-sm text-white/60">
-                Film coming soon — &ldquo;This is what a guest sees&rdquo;
-              </p>
+
+              {/* Simulated landscape interior */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute top-1/2 left-0 right-0 h-px bg-accent/10 -translate-y-4 rotate-3" />
+              </div>
+
+              {/* POI cards floating */}
+              <div className="absolute top-10 left-0 right-0 flex items-start justify-around px-6 pt-6 gap-4">
+                {POI_CARDS.map((card) => (
+                  <div
+                    key={card.title}
+                    className="flex flex-col items-center"
+                    style={{ maxWidth: "180px" }}
+                  >
+                    <div
+                      className="rounded-lg px-3 py-2.5 w-full"
+                      style={{
+                        background: "rgba(27,61,47,0.92)",
+                        border: "0.5px solid #C49A5C",
+                      }}
+                    >
+                      <p className="font-body font-medium text-[9px] uppercase tracking-widest text-accent">
+                        {card.category}
+                      </p>
+                      <p className="font-display italic text-[11px] text-white mt-0.5 leading-tight">
+                        {card.title}
+                      </p>
+                      <p className="font-body text-[9px] text-white/60 mt-0.5">
+                        {card.sub}
+                      </p>
+                    </div>
+                    <div className="w-px bg-accent mt-1" style={{ height: "14px" }} />
+                    <div className="w-[4px] h-[4px] rounded-full bg-accent" />
+                  </div>
+                ))}
+              </div>
+
+              {/* Mini-map */}
+              <div
+                className="absolute bottom-4 left-4 rounded-lg px-3 py-2"
+                style={{
+                  background: "rgba(27,61,47,0.92)",
+                  border: "0.5px solid rgba(196,154,92,0.4)",
+                  minWidth: "120px",
+                }}
+              >
+                <p className="font-body text-[9px] text-accent/80 uppercase tracking-widest">
+                  Rhine Gorge
+                </p>
+                <p className="font-body text-[10px] text-white/70 mt-0.5">
+                  3 nearby stories
+                </p>
+              </div>
             </div>
+            <p className="font-body text-sm text-muted-foreground mt-4 text-center">
+              What the guest sees — points of interest surfaced in real time, as the vessel moves through the route.
+            </p>
           </ScrollReveal>
         </div>
       </div>
@@ -92,8 +162,8 @@ export default function TheExperienceSection() {
             </h3>
             <p className="font-body text-lg text-foreground max-w-[600px] mx-auto mt-6 text-center">
               Guests scan a QR code — in their cabin, on a welcome card, or in a
-              message from the operator — and HostAtlas opens directly in their
-              phone&apos;s browser.
+              message from the operator — and The Host Atlas opens directly in
+              their phone&apos;s browser.
             </p>
           </ScrollReveal>
 
@@ -109,40 +179,11 @@ export default function TheExperienceSection() {
           </div>
 
           <ScrollReveal delay={240} className="mt-8 text-center">
-            <p className="font-body text-sm text-muted-foreground max-w-[480px] mx-auto">
-              Content saves to the device before departure — poor signal in a
-              fjord or remote valley is never an issue.
-            </p>
-          </ScrollReveal>
-
-          {/* Verbatim cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-            {VERBATIMS.map((quote, i) => (
-              <ScrollReveal key={i} delay={i * 80}>
-                <div className="bg-background border border-border rounded-lg p-6 border-l-[3px] border-l-deep-green">
-                  <p className="font-body italic text-base text-foreground">
-                    &ldquo;{quote}&rdquo;
-                  </p>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-
-          {/* Phone mockup */}
-          <ScrollReveal delay={240} className="mt-12 flex flex-col items-center">
-            <div className="w-full max-w-[320px] rounded-3xl border-[8px] border-foreground bg-deep-green overflow-hidden relative min-h-[500px]">
-              {/* Simplified map */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                {/* River line */}
-                <div className="absolute top-1/2 left-0 right-0 h-px bg-accent/20 -translate-y-4 rotate-6" />
-                {/* POI dots */}
-                <div className="absolute top-[35%] left-[28%] w-3 h-3 rounded-full bg-accent" />
-                <div className="absolute top-[50%] left-[55%] w-3 h-3 rounded-full bg-accent" />
-                <div className="absolute top-[65%] left-[38%] w-3 h-3 rounded-full bg-accent" />
-              </div>
-            </div>
-            <p className="font-body text-sm text-muted-foreground mt-4 text-center">
-              Interactive demo loading — the Rhine gorge, 3 points of interest
+            <p className="font-body text-sm text-muted-foreground max-w-[540px] mx-auto">
+              It is personal and quiet: the guest chooses when to look, and what
+              to explore. Nothing is broadcast. Nothing interrupts. The landscape
+              stays primary. Content saves to the device before departure — poor
+              signal in a fjord or remote valley is never an issue.
             </p>
           </ScrollReveal>
         </div>

@@ -35,7 +35,7 @@ export default function UnreadLandscapeSection() {
       />
       <div
         className="absolute inset-0 z-10"
-        style={{ backgroundColor: "rgba(31,74,58,0.82)" }}
+        style={{ backgroundColor: "rgba(27,61,47,0.87)" }}
         aria-hidden="true"
       />
 
@@ -43,20 +43,20 @@ export default function UnreadLandscapeSection() {
       <div className="relative z-20 max-w-[900px] mx-auto px-6 py-24 md:py-32">
         <ScrollReveal>
           <h2 className="font-display text-[28px] md:text-[40px] leading-tight text-white max-w-[700px]">
-            The silent stretch isn&apos;t silent because there&apos;s nothing
-            there. It&apos;s unread.
+            What passes by is rarely explained.
           </h2>
           <p className="font-body text-lg text-white/85 max-w-[640px] mt-6">
-            Every river valley and coastal route is layered with content —
-            geological, historical, cultural, ecological. The guest&apos;s eye
-            sees scenery. HostAtlas adds the interpretive layer that makes it
-            legible.
+            A hill is just a hill until it has a story. A bridge is just a
+            bridge. A ruin on a slope is just a ruin. Without interpretation,
+            the guest&apos;s eye moves across the landscape without landing
+            anywhere. The scenery accumulates — and eventually becomes
+            background.
           </p>
           <p className="font-body text-lg text-white/85 max-w-[640px] mt-4">
-            Your neighbour on deck may be following an entirely different story
-            through the same landscape — in their own language, around their own
-            interests. That&apos;s not possible with a guide and a microphone.
-            It is the nature of a personal lens.
+            The Host Atlas adds the interpretive layer that makes the landscape
+            legible. History. Folklore. Geology. Local life. The people who have
+            lived, worked, and made things in the places the vessel is passing
+            through right now.
           </p>
         </ScrollReveal>
 

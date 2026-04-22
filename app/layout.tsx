@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HostAtlas — A contextual experience layer for scenic transit",
+  title: "The Host Atlas — Curated narratives for the silent stretches",
   description:
-    "HostAtlas gives river and coastal cruise operators a contextual experience layer for the journey between the highlights — turning what guests see into something they understand.",
+    "The Host Atlas gives river, coastal, and expedition cruise operators a contextual experience layer for the journey between the highlights. Curated narratives for the silent stretches.",
   openGraph: {
-    title: "HostAtlas",
+    title: "The Host Atlas — Curated narratives for the silent stretches",
     description:
-      "A contextual experience layer for river and coastal cruise operators.",
+      "A contextual experience layer for river, coastal, and expedition cruise operators. Turning scenic transit into curated narrative.",
     url: "https://hostatlas.guide",
-    siteName: "HostAtlas",
+    siteName: "The Host Atlas",
     type: "website",
   },
 };

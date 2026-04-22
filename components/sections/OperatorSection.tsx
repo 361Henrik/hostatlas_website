@@ -33,11 +33,11 @@ export default function OperatorSection() {
                 Your Platform
               </p>
               <h2 className="font-display text-[28px] md:text-[40px] leading-tight text-foreground">
-                One platform. Your narrative. Entirely yours.
+                One platform. Your narrative, entirely.
               </h2>
               <p className="font-body text-lg text-foreground max-w-prose mt-6">
-                HostAtlas is not a generic content library. Every deployment is
-                built specifically for the operator — in their voice, around
+                The Host Atlas is not a generic content library. Every deployment
+                is built specifically for the operator — in their voice, around
                 their themes, approved before a single guest sees it. The
                 platform is shared. The story, the tone, and the guest
                 relationship are entirely yours.
@@ -71,8 +71,8 @@ export default function OperatorSection() {
                 </h3>
                 <p className="font-body text-base text-white/85 mt-4 max-w-prose">
                   A sailing on the Rhine in April moves through a different
-                  landscape than the same route in October. HostAtlas content
-                  can be layered seasonally.
+                  landscape than the same route in October. The Host Atlas
+                  content can be layered seasonally.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
@@ -96,8 +96,8 @@ export default function OperatorSection() {
 
                 <blockquote className="border-l-2 border-accent pl-5 mt-8">
                   <p className="font-display italic text-lg text-white/80">
-                    HostAtlas is designed to work alongside your existing guide
-                    programme. Guides lead the highlights. We cover the river.
+                    Guides bring the highlights to life. The Host Atlas curates
+                    the silent stretches.
                   </p>
                 </blockquote>
               </div>

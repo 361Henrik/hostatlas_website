@@ -45,7 +45,7 @@ export default function OperatorGainsSection() {
         <ScrollReveal delay={80}>
           <div className="bg-card rounded-xl p-10">
             <p className="font-body font-medium text-xs uppercase tracking-widest text-accent">
-              What This Can Become
+              AN EXPANSION LAYER
             </p>
             <h3 className="font-display text-[24px] md:text-[28px] leading-tight text-foreground mt-4">
               The route as a living commercial journey.
@@ -62,17 +62,16 @@ export default function OperatorGainsSection() {
               the way home.
             </p>
             <p className="font-body italic text-sm text-muted-foreground mt-6 max-w-prose">
-              A developing layer — one we are exploring with operators who see
-              the potential in turning the journey itself into an authentic
-              commercial route.
+              Available to operators who want it — present and ready for those
+              exploring it.
             </p>
           </div>
         </ScrollReveal>
 
         <ScrollReveal delay={160} className="mt-16 text-center">
           <p className="font-display text-[20px] md:text-[22px] text-deep-green max-w-[700px] mx-auto">
-            HostAtlas turns scenic transit from an unmanaged stretch of the
-            journey into a branded, measurable, compounding experience asset.
+            The Host Atlas transforms the journey between the highlights into
+            something defined, measurable, and lasting.
           </p>
         </ScrollReveal>
       </div>

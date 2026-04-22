@@ -16,7 +16,7 @@ export default function HeroSection() {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/35 z-10" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/42 z-10" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-[680px] mx-auto">
@@ -26,16 +26,19 @@ export default function HeroSection() {
         <p className="font-display italic text-lg md:text-2xl text-white/80 mt-4">
           The highlights are covered. The silent stretches aren&apos;t.
         </p>
+        <p className="font-display italic text-base md:text-lg text-accent mt-3">
+          Curated narratives for the silent stretches
+        </p>
         <p className="font-body text-lg text-white/85 max-w-[520px] mx-auto mt-6">
-          HostAtlas gives river and coastal cruise operators a contextual
-          experience layer for the journey between the highlights — turning what
-          guests see into something they understand.
+          The Host Atlas gives river, coastal, and expedition cruise operators a
+          contextual experience layer for the journey between the highlights —
+          turning what guests observe into something they understand.
         </p>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
           className="inline-flex items-center mt-10 font-body font-medium text-base text-white bg-primary px-8 h-12 rounded transition-opacity duration-300 ease-out hover:opacity-90"
         >
-          Request a conversation →
+          Get in touch
         </a>
       </div>
 
