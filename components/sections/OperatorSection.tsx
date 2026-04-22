@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { SECTION_IDS } from "@/lib/constants";
 
@@ -23,19 +24,52 @@ const SEASON_CARDS = [
 
 export default function OperatorSection() {
   return (
-    <section id={SECTION_IDS.operator} className="bg-background py-24 px-6">
-      <div className="max-w-[1100px] mx-auto">
+    <section
+      id={SECTION_IDS.operator}
+      className="py-24 px-6 md:py-32"
+      style={{ backgroundColor: "#FBFAF8" }}
+    >
+      <div className="max-w-[1280px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          {/* Content — left */}
+
+          {/* ── Content — left ──────────────────────────────────── */}
           <div>
             <ScrollReveal>
-              <p className="font-body font-medium text-xs uppercase tracking-[0.08em] text-deep-green mb-6">
+              <p
+                className="uppercase mb-6"
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontWeight: 500,
+                  fontSize: "11px",
+                  letterSpacing: "0.08em",
+                  color: "#1B3D2F",
+                }}
+              >
                 Your Platform
               </p>
-              <h2 className="font-display text-[28px] md:text-[40px] leading-tight text-foreground">
+              <h2
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontWeight: 500,
+                  fontSize: "clamp(28px, 3.5vw, 40px)",
+                  lineHeight: 1.1,
+                  letterSpacing: "-0.01em",
+                  color: "#1A1A2E",
+                }}
+              >
                 One platform. Your narrative, entirely.
               </h2>
-              <p className="font-body text-lg text-foreground max-w-prose mt-6">
+              <p
+                className="mt-6"
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontWeight: 400,
+                  fontSize: "18px",
+                  lineHeight: 1.72,
+                  color: "#1A1A2E",
+                  maxWidth: "48ch",
+                }}
+              >
                 The Host Atlas is not a generic content library. Every deployment
                 is built specifically for the operator — in their voice, around
                 their themes, approved before a single guest sees it. The
@@ -49,10 +83,27 @@ export default function OperatorSection() {
               {PILLARS.map((pillar, i) => (
                 <ScrollReveal key={pillar.label} delay={i * 80}>
                   <div>
-                    <p className="font-body font-medium text-sm text-foreground">
+                    <p
+                      style={{
+                        fontFamily: "var(--font-inter), sans-serif",
+                        fontWeight: 500,
+                        fontSize: "15px",
+                        color: "#1A1A2E",
+                      }}
+                    >
                       {pillar.label}
                     </p>
-                    <p className="font-body text-base text-muted-foreground mt-2 max-w-prose">
+                    <p
+                      className="mt-2"
+                      style={{
+                        fontFamily: "var(--font-inter), sans-serif",
+                        fontWeight: 400,
+                        fontSize: "15px",
+                        lineHeight: 1.65,
+                        color: "rgba(26,26,46,0.62)",
+                        maxWidth: "32ch",
+                      }}
+                    >
                       {pillar.body}
                     </p>
                   </div>
@@ -62,14 +113,45 @@ export default function OperatorSection() {
 
             {/* Seasonal block */}
             <ScrollReveal delay={320} className="mt-12">
-              <div className="bg-deep-green rounded-xl p-10">
-                <p className="font-body font-medium text-xs uppercase tracking-widest text-accent">
+              <div
+                className="rounded-xl"
+                style={{ backgroundColor: "#1B3D2F", padding: "40px" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontWeight: 500,
+                    fontSize: "10px",
+                    letterSpacing: "0.1em",
+                    textTransform: "uppercase",
+                    color: "#C49A5C",
+                  }}
+                >
                   The Seasonal Layer
                 </p>
-                <h3 className="font-display text-2xl text-white mt-4">
+                <h3
+                  className="mt-4"
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontWeight: 500,
+                    fontSize: "24px",
+                    lineHeight: 1.15,
+                    color: "#F5F3EF",
+                  }}
+                >
                   The route repeats. The seasons don&apos;t.
                 </h3>
-                <p className="font-body text-base text-white/85 mt-4 max-w-prose">
+                <p
+                  className="mt-4"
+                  style={{
+                    fontFamily: "var(--font-inter), sans-serif",
+                    fontWeight: 400,
+                    fontSize: "16px",
+                    lineHeight: 1.7,
+                    color: "rgba(245,243,239,0.82)",
+                    maxWidth: "44ch",
+                  }}
+                >
                   A sailing on the Rhine in April moves through a different
                   landscape than the same route in October. The Host Atlas
                   content can be layered seasonally.
@@ -79,23 +161,67 @@ export default function OperatorSection() {
                   {SEASON_CARDS.map((card) => (
                     <div
                       key={card.title}
-                      className="bg-white/[0.08] border border-accent/30 rounded-lg p-5"
+                      className="rounded-lg"
+                      style={{
+                        backgroundColor: "rgba(255,255,255,0.07)",
+                        border: "0.5px solid rgba(196,154,92,0.3)",
+                        padding: "18px 20px",
+                      }}
                     >
-                      <p className="font-body text-base text-white">
-                        {card.title}
-                      </p>
-                      <p className="font-body font-medium text-xs uppercase tracking-widest text-accent mt-2">
+                      <p
+                        style={{
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 500,
+                          fontSize: "10px",
+                          letterSpacing: "0.1em",
+                          textTransform: "uppercase",
+                          color: "#C49A5C",
+                        }}
+                      >
                         {card.label}
                       </p>
-                      <p className="font-body text-sm text-white/85 mt-3">
+                      <p
+                        className="mt-2"
+                        style={{
+                          fontFamily: "var(--font-playfair), serif",
+                          fontWeight: 500,
+                          fontSize: "15px",
+                          lineHeight: 1.35,
+                          color: "#F5F3EF",
+                        }}
+                      >
+                        {card.title}
+                      </p>
+                      <p
+                        className="mt-2"
+                        style={{
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 400,
+                          fontSize: "13px",
+                          lineHeight: 1.6,
+                          color: "rgba(245,243,239,0.75)",
+                        }}
+                      >
                         {card.body}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <blockquote className="border-l-2 border-accent pl-5 mt-8">
-                  <p className="font-display italic text-lg text-white/80">
+                <blockquote
+                  className="mt-8"
+                  style={{ borderLeft: "2px solid #C49A5C", paddingLeft: "20px" }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontWeight: 400,
+                      fontStyle: "italic",
+                      fontSize: "18px",
+                      lineHeight: 1.5,
+                      color: "rgba(245,243,239,0.78)",
+                    }}
+                  >
                     Guides bring the highlights to life. The Host Atlas curates
                     the silent stretches.
                   </p>
@@ -104,35 +230,28 @@ export default function OperatorSection() {
             </ScrollReveal>
           </div>
 
-          {/* Mockup — right */}
-          <ScrollReveal delay={160} className="flex flex-col items-center justify-start pt-8">
-            <div className="w-full max-w-[300px] rounded-3xl border-[8px] border-foreground bg-deep-green overflow-hidden">
-              {/* Operator top bar */}
-              <div className="bg-deep-green px-4 py-5 flex items-center gap-3 border-b border-accent/20">
-                <div className="w-8 h-8 rounded bg-accent/30 flex items-center justify-center">
-                  <div className="w-4 h-4 rounded-sm bg-accent/60" />
-                </div>
-                <div>
-                  <div className="h-2 w-20 bg-white/30 rounded" />
-                  <div className="h-1.5 w-12 bg-white/15 rounded mt-1.5" />
-                </div>
-              </div>
-              <div className="p-4 space-y-3">
-                {[1, 2, 3].map((n) => (
-                  <div key={n} className="bg-white/[0.08] rounded-lg p-3 flex gap-3">
-                    <div className="w-8 h-8 rounded-full bg-accent/30 flex-shrink-0" />
-                    <div className="flex-1 space-y-1.5">
-                      <div className="h-2 w-3/4 bg-white/25 rounded" />
-                      <div className="h-1.5 w-1/2 bg-white/15 rounded" />
-                    </div>
-                  </div>
-                ))}
-              </div>
+          {/* ── Image — right column ─────────────────────────────── */}
+          <ScrollReveal delay={160} className="hidden lg:flex flex-col gap-4 sticky top-24">
+            <div className="relative overflow-hidden rounded-xl" style={{ height: "520px" }}>
+              <Image
+                src="/images/screen6-operator.jpg"
+                alt="Cruise operator reviewing The Host Atlas content platform — managing routes, narratives, and guest experience layers"
+                fill
+                className="object-cover"
+              />
             </div>
-            <p className="font-body text-sm text-muted-foreground mt-4 text-center max-w-[240px]">
+            <p
+              className="text-center"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "13px",
+                color: "rgba(26,26,46,0.48)",
+              }}
+            >
               The guest experience carries your identity
             </p>
           </ScrollReveal>
+
         </div>
       </div>
     </section>
