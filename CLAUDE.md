@@ -171,6 +171,17 @@ Defined in `src/App.tsx`:
 
 ---
 
+## Build discipline
+
+Before every commit and push, always run:
+  npm run build
+
+If the build fails, fix all errors before staging anything.
+Never commit code that does not pass a full production build.
+This project deploys to Vercel on every push — a broken commit breaks the live site.
+
+---
+
 ## Open Questions (Require Human Decision)
 
 - Voice tokens: snapshot into export or always reference database as source of truth?
