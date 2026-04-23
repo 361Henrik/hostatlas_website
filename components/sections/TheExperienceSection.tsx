@@ -3,40 +3,19 @@ import { SECTION_IDS } from "@/lib/constants";
 
 const STEPS = [
   {
+    num: "1",
     label: "Scan",
-    sub: "A QR code in their cabin or welcome message.",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.25" />
-        <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.25" />
-        <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.25" />
-        <rect x="14" y="14" width="3" height="3" fill="currentColor" />
-        <rect x="18" y="14" width="3" height="3" fill="currentColor" />
-        <rect x="14" y="18" width="3" height="3" fill="currentColor" />
-        <rect x="18" y="18" width="3" height="3" fill="currentColor" />
-      </svg>
-    ),
+    sub: "A QR code in the cabin, on a welcome card, or in a message from the operator.",
   },
   {
+    num: "2",
     label: "Explore",
-    sub: "Stories and context appear as points of interest come into range.",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.25" />
-        <path d="M12 3v2M12 19v2M3 12h2M19 12h2" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-        <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.25" />
-      </svg>
-    ),
+    sub: "Stories and context surface as the vessel moves through the route. Personal. Quiet. In their own language.",
   },
   {
+    num: "3",
     label: "Pocket the phone",
-    sub: "Eyes back on the landscape. The context stays.",
-    icon: (
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <rect x="7" y="2" width="10" height="20" rx="2" stroke="currentColor" strokeWidth="1.25" />
-        <path d="M10 18h4" stroke="currentColor" strokeWidth="1.25" strokeLinecap="round" />
-      </svg>
-    ),
+    sub: "Audio continues in the background. Eyes back on the landscape.",
   },
 ];
 
@@ -224,52 +203,142 @@ export default function TheExperienceSection() {
         </div>
       </div>
 
+      {/* ── AR Phone Mockup — portrait, CSS-built ────────────────── */}
+      <ScrollReveal>
+        <div
+          className="flex flex-col items-center py-16 px-6"
+          style={{ backgroundColor: "#FBFAF8" }}
+        >
+          {/* Portrait phone frame */}
+          <div
+            className="relative"
+            style={{
+              width: "240px",
+              height: "480px",
+              backgroundColor: "#1B3D2F",
+              borderRadius: "28px",
+              border: "2px solid rgba(196,154,92,0.35)",
+              overflow: "hidden",
+              boxShadow: "0 24px 64px rgba(27,61,47,0.22), 0 4px 16px rgba(0,0,0,0.12)",
+            }}
+            aria-label="AR phone mockup showing The Host Atlas in use"
+          >
+            {/* Status bar */}
+            <div
+              className="flex items-center justify-between px-5 pt-3 pb-2"
+              style={{ backgroundColor: "#1B3D2F" }}
+            >
+              <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", color: "rgba(251,250,248,0.7)" }}>The Host Atlas</span>
+              <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", color: "#C49A5C" }}>● Live</span>
+            </div>
+
+            {/* Map / landscape area */}
+            <div
+              className="relative"
+              style={{
+                height: "200px",
+                background: "linear-gradient(180deg, #1B3D2F 0%, #2a5c45 60%, #3a7a5a 100%)",
+                borderBottom: "0.5px solid rgba(196,154,92,0.25)",
+              }}
+            >
+              {/* Route line */}
+              <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
+                <path d="M30 180 Q80 120 120 100 Q160 80 210 60" stroke="#C49A5C" strokeWidth="1.5" strokeDasharray="4 3" fill="none" opacity="0.7" />
+                {/* Vessel dot */}
+                <circle cx="120" cy="100" r="5" fill="#C49A5C" />
+                <circle cx="120" cy="100" r="10" fill="rgba(196,154,92,0.2)" />
+              </svg>
+              {/* Mini-map label */}
+              <div
+                className="absolute bottom-3 left-3 rounded"
+                style={{ padding: "4px 8px", backgroundColor: "rgba(0,0,0,0.4)", backdropFilter: "blur(4px)" }}
+              >
+                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", color: "rgba(251,250,248,0.8)", letterSpacing: "0.08em", textTransform: "uppercase" }}>Rhine Gorge</p>
+              </div>
+            </div>
+
+            {/* POI card 1 */}
+            <div
+              className="mx-4 mt-4 rounded-lg"
+              style={{ padding: "10px 12px", backgroundColor: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(196,154,92,0.4)" }}
+            >
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#C49A5C" }}>History</p>
+              <p style={{ fontFamily: "var(--font-playfair), serif", fontStyle: "italic", fontSize: "12px", lineHeight: 1.35, color: "#FBFAF8", marginTop: "3px" }}>Burg Sooneck · c. 1170</p>
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", color: "rgba(251,250,248,0.45)", marginTop: "2px" }}>Built as a toll fortress on the Rhine</p>
+              {/* Anchor */}
+              <div className="flex items-center gap-1.5 mt-2">
+                <div style={{ width: "1px", height: "10px", backgroundColor: "#C49A5C" }} />
+                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", color: "rgba(196,154,92,0.7)" }}>340m ahead</p>
+              </div>
+            </div>
+
+            {/* POI card 2 */}
+            <div
+              className="mx-4 mt-2 rounded-lg"
+              style={{ padding: "10px 12px", backgroundColor: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(196,154,92,0.4)" }}
+            >
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#C49A5C" }}>Local producers</p>
+              <p style={{ fontFamily: "var(--font-playfair), serif", fontStyle: "italic", fontSize: "12px", lineHeight: 1.35, color: "#FBFAF8", marginTop: "3px" }}>Weingut Becker · Riesling</p>
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", color: "rgba(251,250,248,0.45)", marginTop: "2px" }}>Estate since 1847</p>
+              <div className="flex items-center gap-1.5 mt-2">
+                <div style={{ width: "1px", height: "10px", backgroundColor: "#C49A5C" }} />
+                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", color: "rgba(196,154,92,0.7)" }}>Port side</p>
+              </div>
+            </div>
+
+            {/* Operator branding strip */}
+            <div
+              className="absolute bottom-0 left-0 right-0 flex items-center justify-center py-2"
+              style={{ backgroundColor: "rgba(27,61,47,0.95)", borderTop: "0.5px solid rgba(196,154,92,0.2)" }}
+            >
+              <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(196,154,92,0.65)" }}>Powered by The Host Atlas</p>
+            </div>
+          </div>
+
+          <p
+            className="mt-6 text-center"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "13px",
+              color: "rgba(26,26,46,0.45)",
+              maxWidth: "38ch",
+            }}
+          >
+            What the guest holds — personalised, quiet, offline-ready.
+          </p>
+        </div>
+      </ScrollReveal>
+
       {/* ── Lower panel — off-white ───────────────────────────────── */}
       <div
         className="py-24 px-6 md:py-32"
         style={{ backgroundColor: "#F5F3EF" }}
       >
         <div className="max-w-[860px] mx-auto">
-          <ScrollReveal>
-            <h3
-              className="text-center"
-              style={{
-                fontFamily: "var(--font-playfair), serif",
-                fontWeight: 500,
-                fontSize: "clamp(24px, 2.8vw, 32px)",
-                lineHeight: 1.15,
-                letterSpacing: "-0.01em",
-                color: "#1A1A2E",
-              }}
-            >
-              No download. No account. No setup.
-            </h3>
-            <p
-              className="text-center mt-6 mx-auto"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 400,
-                fontSize: "18px",
-                lineHeight: 1.72,
-                color: "#1A1A2E",
-                maxWidth: "52ch",
-              }}
-            >
-              Guests scan a QR code — in their cabin, on a welcome card, or in a
-              message from the operator — and The Host Atlas opens directly in
-              their phone&apos;s browser.
-            </p>
-          </ScrollReveal>
-
-          {/* Three steps */}
-          <div className="flex flex-col sm:flex-row gap-12 justify-center mt-12">
+          {/* Three steps — numbered circles */}
+          <div className="flex flex-col sm:flex-row gap-12 justify-center">
             {STEPS.map((step, i) => (
               <ScrollReveal
                 key={step.label}
                 delay={i * 80}
                 className="flex flex-col items-center text-center mx-auto sm:mx-0 max-w-[200px]"
               >
-                <div style={{ color: "#1B3D2F", marginBottom: "12px" }}>{step.icon}</div>
+                {/* Numbered circle */}
+                <div
+                  className="flex items-center justify-center mb-4 flex-shrink-0"
+                  style={{
+                    width: "36px",
+                    height: "36px",
+                    borderRadius: "50%",
+                    border: "1.5px solid #1B3D2F",
+                    fontFamily: "var(--font-playfair), serif",
+                    fontWeight: 500,
+                    fontSize: "15px",
+                    color: "#1B3D2F",
+                  }}
+                >
+                  {step.num}
+                </div>
                 <p
                   style={{
                     fontFamily: "var(--font-playfair), serif",

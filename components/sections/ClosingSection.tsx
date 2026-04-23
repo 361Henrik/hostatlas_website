@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CONTACT_EMAIL, CONTACT_PHONE, SECTION_IDS } from "@/lib/constants";
+import { CONTACT_EMAIL, SECTION_IDS } from "@/lib/constants";
 
 export default function ClosingSection() {
   return (
@@ -144,7 +144,7 @@ export default function ClosingSection() {
           Get in touch
         </a>
 
-        {/* Secondary contact */}
+        {/* Secondary contact — reference format */}
         <p
           className="mt-4"
           style={{
@@ -153,7 +153,7 @@ export default function ClosingSection() {
             color: "rgba(245,243,239,0.55)",
           }}
         >
-          {CONTACT_PHONE} ·{" "}
+          Schedule a call via Calendly · Or write directly:{" "}
           <a
             href={`mailto:${CONTACT_EMAIL}`}
             className="underline underline-offset-2 transition-opacity duration-300 ease-out hover:opacity-80"

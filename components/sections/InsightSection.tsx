@@ -1,4 +1,3 @@
-import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { SECTION_IDS } from "@/lib/constants";
 
@@ -24,31 +23,57 @@ export default function InsightSection() {
   return (
     <section
       id={SECTION_IDS.insight}
-      className="relative overflow-hidden"
       style={{ backgroundColor: "#1B3D2F" }}
     >
-      {/* ── Supporting image — subtle background texture ─────────── */}
-      <Image
-        src="/images/screen7-insight.png"
-        alt=""
-        aria-hidden="true"
-        fill
-        className="object-cover"
-        style={{ zIndex: 0, opacity: 0.12 }}
-      />
-      <div
-        className="absolute inset-0"
-        style={{ backgroundColor: "rgba(27,61,47,0.82)", zIndex: 1 }}
-        aria-hidden="true"
-      />
-
       {/* ── Content ──────────────────────────────────────────────── */}
-      <div
-        className="relative py-24 px-6 md:py-32"
-        style={{ zIndex: 2 }}
-      >
+      <div className="py-24 px-6 md:py-32">
         <div className="max-w-[900px] mx-auto">
+
+          {/* ── Finding 5 opening — pull quote + verbatim callout ── */}
           <ScrollReveal>
+            <p
+              className="text-center mx-auto"
+              style={{
+                fontFamily: "var(--font-playfair), serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "clamp(20px, 2.8vw, 26px)",
+                lineHeight: 1.4,
+                color: "#F5F3EF",
+                maxWidth: "560px",
+                marginBottom: "24px",
+              }}
+            >
+              &ldquo;The experience is relaxing — and quietly frustrating.&rdquo;
+            </p>
+
+            {/* Verbatim callout box */}
+            <div
+              className="mx-auto"
+              style={{
+                backgroundColor: "#F5F3EF",
+                border: "0.5px solid rgba(196,154,92,0.5)",
+                borderRadius: "8px",
+                padding: "18px 22px",
+                maxWidth: "540px",
+                marginBottom: "56px",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontStyle: "italic",
+                  fontSize: "15px",
+                  lineHeight: 1.55,
+                  color: "#1A1A2E",
+                }}
+              >
+                &ldquo;The scenery was beautiful, but long stretches of sailing could feel quiet, repetitive, and sometimes a little boring.&rdquo;
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={80}>
             <p
               className="uppercase mb-6"
               style={{
@@ -84,9 +109,10 @@ export default function InsightSection() {
                 maxWidth: "54ch",
               }}
             >
-              When a guest reaches for their device on a stretch of river that had
-              no content, that moment tells you something. Not what they found —
-              what caught their attention when nothing was there to meet it.
+              Every time a guest reaches for their device — to explore a story,
+              to linger on a particular stretch, to look for context that
+              isn&apos;t there yet — that moment is recorded. Not what they
+              found. What caught their attention.
             </p>
             <p
               className="mt-4"
@@ -99,9 +125,11 @@ export default function InsightSection() {
                 maxWidth: "54ch",
               }}
             >
-              If guests on successive sailings all look for context at the same
-              bend in the river, that&apos;s not coincidence. Something is holding
-              attention that the route hasn&apos;t named yet.
+              Across sailings, patterns emerge. Certain stretches hold attention
+              that the route hasn&apos;t named yet. Certain themes resonate far
+              more deeply than others. Certain seasons change what guests are
+              curious about. The Host Atlas surfaces all of this — before the
+              next sailing, not after the next season.
             </p>
           </ScrollReveal>
 

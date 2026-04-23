@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       id={SECTION_IDS.hero}
-      className="relative h-screen min-h-[680px] flex items-end overflow-hidden"
+      className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden"
       aria-label="Hero — The Host Atlas"
     >
       {/* ── Background image ─────────────────────────────────────────── */}
@@ -27,24 +27,11 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Content — bottom-left editorial layout ───────────────────── */}
+      {/* ── Content — centred editorial layout, max-width 680px ────────── */}
       <div
-        className="relative w-full max-w-[1280px] mx-auto px-8 md:px-16 pb-20 md:pb-28"
-        style={{ zIndex: 2 }}
+        className="relative w-full flex flex-col items-center text-center px-8"
+        style={{ zIndex: 2, maxWidth: "680px", margin: "0 auto" }}
       >
-        {/* Overline — cruise types, Inter 500, bronze, uppercase */}
-        <p
-          className="text-[#C49A5C] uppercase mb-7"
-          style={{
-            fontFamily: "var(--font-inter), sans-serif",
-            fontWeight: 500,
-            fontSize: "11px",
-            letterSpacing: "0.09em",
-          }}
-        >
-          River · Coastal · Expedition
-        </p>
-
         {/* Headline — Playfair 500, large, tight leading */}
         <h1
           className="text-[#FBFAF8] mb-5"
@@ -54,7 +41,6 @@ export default function HeroSection() {
             fontSize: "clamp(44px, 5.5vw, 68px)",
             lineHeight: 1.05,
             letterSpacing: "-0.01em",
-            maxWidth: "13ch",
           }}
         >
           What&apos;s that
@@ -72,7 +58,6 @@ export default function HeroSection() {
             fontSize: "clamp(18px, 2vw, 22px)",
             lineHeight: 1.35,
             color: "rgba(251,250,248,0.72)",
-            maxWidth: "38ch",
           }}
         >
           The highlights are covered. The silent stretches aren&apos;t.
@@ -93,14 +78,14 @@ export default function HeroSection() {
           Curated narratives for the silent stretches
         </p>
 
-        {/* Bronze rule — jewellery, not paint */}
+        {/* Bronze rule — centred */}
         <div
           className="bg-[#C49A5C] mb-9"
           style={{ width: "40px", height: "1px" }}
           aria-hidden="true"
         />
 
-        {/* Body copy — Inter 400, white/78, constrained to 48ch */}
+        {/* Body copy — Inter 400, white/78 */}
         <p
           className="mb-10"
           style={{
@@ -109,7 +94,6 @@ export default function HeroSection() {
             fontSize: "18px",
             lineHeight: 1.72,
             color: "rgba(251,250,248,0.78)",
-            maxWidth: "48ch",
           }}
         >
           The Host Atlas gives river, coastal, and expedition cruise operators

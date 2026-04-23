@@ -24,114 +24,123 @@ export default function TheMomentSection() {
   return (
     <section id={SECTION_IDS.moment} className="bg-[#FBFAF8]">
 
-      {/* ── Two-column: image left / content right ─────────────────── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2">
+      {/* ── Single-column intro — white panel, centred, max-width 760px ── */}
+      <div
+        className="mx-auto px-8 md:px-16"
+        style={{
+          maxWidth: "760px",
+          paddingTop: "clamp(64px, 9vw, 112px)",
+          paddingBottom: "clamp(48px, 7vw, 80px)",
+        }}
+      >
+        <ScrollReveal>
+          <p
+            className="text-[#1B3D2F] uppercase mb-6"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 500,
+              fontSize: "11px",
+              letterSpacing: "0.08em",
+            }}
+          >
+            The Silent Stretches
+          </p>
+          <h2
+            className="text-[#1A1A2E]"
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 500,
+              fontSize: "clamp(28px, 3.5vw, 40px)",
+              lineHeight: 1.1,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            Every journey carries the same question.
+          </h2>
+        </ScrollReveal>
 
-        {/* Image column */}
-        <div className="relative min-h-[400px] lg:min-h-[700px]">
-          <Image
-            src="/images/screen2-deck-river.jpg"
-            alt="Guest at the railing of a river cruise vessel looking out at the passing landscape"
-            fill
-            className="object-cover"
-          />
-        </div>
+        <ScrollReveal delay={80} className="mt-8">
+          <p
+            className="text-[#1A1A2E]"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.7,
+            }}
+          >
+            You&apos;re on deck. Something catches your eye — a ruined tower on
+            a hillside, a cluster of boats in a cove, a stretch of cliff face
+            that seems to hold something. And the question forms, almost
+            involuntarily.
+          </p>
+        </ScrollReveal>
 
-        {/* Content column */}
-        <div className="px-8 py-20 md:px-16 md:py-28 max-w-[600px]">
+        {/* "These are the silent stretches." — standalone typographic moment */}
+        <ScrollReveal delay={140} className="mt-12">
+          <p
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 400,
+              fontStyle: "italic",
+              fontSize: "clamp(20px, 2.5vw, 24px)",
+              lineHeight: 1.35,
+              color: "#1B3D2F",
+            }}
+          >
+            These are the silent stretches.
+          </p>
+        </ScrollReveal>
 
-          <ScrollReveal>
-            <p
-              className="text-[#1B3D2F] uppercase mb-6"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 500,
-                fontSize: "11px",
-                letterSpacing: "0.08em",
-              }}
-            >
-              The Silent Stretches
-            </p>
-            <h2
-              className="text-[#1A1A2E]"
-              style={{
-                fontFamily: "var(--font-playfair), serif",
-                fontWeight: 500,
-                fontSize: "clamp(28px, 3.5vw, 40px)",
-                lineHeight: 1.1,
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Every journey carries the same question.
-            </h2>
-          </ScrollReveal>
+        <ScrollReveal delay={200} className="mt-8">
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.7,
+              color: "rgba(26,26,46,0.75)",
+            }}
+          >
+            Travel operators cover the highlights well. They have guides,
+            shore excursions, port talks, and onboard programming. But the
+            journey between those highlights — the hours of sailing, the passing
+            landscapes, the unnamed villages and unexplained cliff faces — is
+            left to the guest to interpret alone.
+          </p>
+        </ScrollReveal>
 
-          <ScrollReveal delay={80} className="mt-8">
-            <p
-              className="text-[#1A1A2E]"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 400,
-                fontSize: "18px",
-                lineHeight: 1.7,
-                maxWidth: "48ch",
-              }}
-            >
-              You&apos;re on deck. Something catches your eye — a ruined tower
-              on a hillside, a cluster of boats in a cove, a stretch of cliff
-              face that seems to hold something. And the question forms, almost
-              involuntarily.
-            </p>
-          </ScrollReveal>
+        <ScrollReveal delay={260} className="mt-6">
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.7,
+              color: "rgba(26,26,46,0.75)",
+            }}
+          >
+            What no one has designed for is everything between. The unnamed
+            stretches. The passing villages. The cliff face that no one
+            explains. Guests look up. Guests wonder. And then the moment passes.
+          </p>
+        </ScrollReveal>
 
-          <ScrollReveal delay={160} className="mt-10">
-            <p
-              style={{
-                fontFamily: "var(--font-playfair), serif",
-                fontWeight: 400,
-                fontStyle: "italic",
-                fontSize: "20px",
-                lineHeight: 1.35,
-                color: "#1B3D2F",
-              }}
-            >
-              These are the silent stretches.
-            </p>
-            <p
-              className="mt-4"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 400,
-                fontSize: "18px",
-                lineHeight: 1.7,
-                color: "rgba(26,26,46,0.68)",
-                maxWidth: "46ch",
-              }}
-            >
-              The hours between the highlights — when guests are watching,
-              curious, and there is nothing there to meet them. Not because the
-              landscape is empty — because what it holds is rarely named.
-            </p>
-          </ScrollReveal>
-
-          <ScrollReveal delay={240} className="mt-6">
-            <p
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontWeight: 400,
-                fontSize: "18px",
-                lineHeight: 1.7,
-                color: "rgba(26,26,46,0.68)",
-                maxWidth: "46ch",
-              }}
-            >
-              When information does exist, it often arrives too late. By the
-              time an announcement is made, the moment has passed — the castle
-              has slipped behind the bend.
-            </p>
-          </ScrollReveal>
-
-        </div>
+        <ScrollReveal delay={320} className="mt-6">
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.7,
+              color: "rgba(26,26,46,0.75)",
+            }}
+          >
+            Guests are still curious during these stretches — they are watching,
+            noticing, and reaching for context that is not there. The question
+            forms. The moment passes. The question is never answered.
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* ── Verbatim callouts over landscape image ─────────────────── */}

@@ -38,10 +38,10 @@ export default function UnreadLandscapeSection() {
         style={{ zIndex: 0 }}
       />
 
-      {/* ── Green overlay rgba(27,61,47,0.92) ── */}
+      {/* ── Green overlay rgba(27,61,47,0.87) — design system §6 ── */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: "rgba(27,61,47,0.92)", zIndex: 1 }}
+        style={{ backgroundColor: "rgba(27,61,47,0.87)", zIndex: 1 }}
         aria-hidden="true"
       />
 
@@ -108,6 +108,21 @@ export default function UnreadLandscapeSection() {
             legible. History. Folklore. Geology. Local life. The people who have
             lived, worked, and made things in the places the vessel is passing
             through right now.
+          </p>
+          <p
+            className="mt-4"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.72,
+              color: "rgba(245,243,239,0.85)",
+              maxWidth: "54ch",
+            }}
+          >
+            This is not narration for narration&apos;s sake. It is context that
+            transforms what a guest sees into something they understand — and
+            remember.
           </p>
         </ScrollReveal>
 

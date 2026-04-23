@@ -1,14 +1,13 @@
-import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { SECTION_IDS } from "@/lib/constants";
 
 const OUTCOME_CARDS = [
-  { title: "Stronger guest engagement", body: "Silent stretches become memorable — guests who engage with the landscape stay engaged with the journey." },
-  { title: "Post-trip relevance", body: "A guest who understands what they passed through has more to carry home. The trip lives longer." },
-  { title: "A distinctive experience", body: "No other operator on your route offers this layer. That\u2019s not a small distinction in a competitive market." },
-  { title: "Scalable across routes", body: "Once the editorial framework is in place, new routes and regions are faster to build. The system compounds." },
-  { title: "Real guest insight", body: "Aggregate engagement data shows you what the route is doing — which stories land, which stretches need attention." },
-  { title: "Content that compounds", body: "Each seasonal layer, each new lens, adds depth without replacing what came before. The platform grows with you." },
+  { title: "Stronger guest engagement", body: "Throughout the journey — not just at the headline moments." },
+  { title: "Post-trip relevance", body: "A guest who understands what they passed through has more to carry home — and more to say about the operator who gave it to them." },
+  { title: "A distinctive guest experience", body: "No other operator on your route offers this layer. That is not a small distinction in a competitive market." },
+  { title: "Scalable across routes", body: "Once the editorial framework is in place, new routes and seasons are faster to build. The platform compounds." },
+  { title: "Real guest insight", body: "Aggregate engagement data shows you what the route is doing — which stretches hold attention, which stories land, which lenses resonate." },
+  { title: "Content that compounds", body: "Each seasonal layer, each new lens, each new route adds depth without replacing what came before. The platform grows with you." },
 ];
 
 export default function OperatorGainsSection() {
@@ -89,12 +88,11 @@ export default function OperatorGainsSection() {
         {/* ── Expansion layer block ─────────────────────────────── */}
         <ScrollReveal delay={80}>
           <div
-            className="rounded-xl overflow-hidden"
+            className="rounded-xl"
             style={{ backgroundColor: "#F5F3EF" }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-2">
-              {/* Text */}
-              <div style={{ padding: "40px" }}>
+            {/* Text only — no image column per reference spec */}
+            <div style={{ padding: "40px", maxWidth: "640px" }}>
                 <p
                   style={{
                     fontFamily: "var(--font-inter), sans-serif",
@@ -165,17 +163,6 @@ export default function OperatorGainsSection() {
                   Available to operators who want it — present and ready for
                   those exploring it.
                 </p>
-              </div>
-
-              {/* Supporting image */}
-              <div className="relative min-h-[280px] md:min-h-0">
-                <Image
-                  src="/images/screen8-operator.jpg"
-                  alt="Operator reviewing route narrative data — the commercial layer of The Host Atlas"
-                  fill
-                  className="object-cover"
-                />
-              </div>
             </div>
           </div>
         </ScrollReveal>
