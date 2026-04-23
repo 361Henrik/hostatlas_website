@@ -30,7 +30,7 @@ export default function UnreadLandscapeSection() {
     >
       {/* ── Background image ─────────────────────────────────────── */}
       <Image
-        src="/images/screen4-background.jpg"
+        src="/images/screen4-fjord-cliffs.jpg"
         alt=""
         aria-hidden="true"
         fill
@@ -38,10 +38,10 @@ export default function UnreadLandscapeSection() {
         style={{ zIndex: 0 }}
       />
 
-      {/* ── Green overlay rgba(27,61,47,0.87) — design system §6 ── */}
+      {/* ── Green overlay rgba(27,61,47,0.92) ── */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: "rgba(27,61,47,0.87)", zIndex: 1 }}
+        style={{ backgroundColor: "rgba(27,61,47,0.92)", zIndex: 1 }}
         aria-hidden="true"
       />
 

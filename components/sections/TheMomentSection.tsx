@@ -131,28 +131,6 @@ export default function TheMomentSection() {
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={320} className="mt-10">
-            <blockquote
-              style={{
-                borderLeft: "2px solid #C49A5C",
-                paddingLeft: "16px",
-              }}
-            >
-              <p
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontWeight: 400,
-                  fontStyle: "italic",
-                  fontSize: "17px",
-                  lineHeight: 1.5,
-                  color: "#1B3D2F",
-                }}
-              >
-                Guides bring the highlights to life. The Host Atlas curates the
-                silent stretches.
-              </p>
-            </blockquote>
-          </ScrollReveal>
         </div>
       </div>
 
@@ -330,6 +308,249 @@ export default function TheMomentSection() {
           </div>
         </div>
       </div>
+
+      {/* ── Research Findings Block ─────────────────────────────────── */}
+      <ScrollReveal>
+        <div
+          style={{
+            backgroundColor: "#1B3D2F",
+            padding: "clamp(40px, 7vw, 72px) clamp(24px, 5vw, 48px)",
+          }}
+        >
+          {/* Overline */}
+          <p
+            className="text-center mb-8"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 500,
+              fontSize: "10px",
+              letterSpacing: "0.09em",
+              textTransform: "uppercase",
+              color: "#C49A5C",
+            }}
+          >
+            From the research
+          </p>
+
+          {/* Three findings */}
+          <div
+            className="flex flex-col mx-auto"
+            style={{ gap: "48px", maxWidth: "640px" }}
+          >
+            {/* Finding 1 */}
+            <div className="flex flex-col items-center text-center">
+              <p
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: "clamp(17px, 2.2vw, 20px)",
+                  lineHeight: 1.4,
+                  color: "#F5F3EF",
+                  marginBottom: "10px",
+                }}
+              >
+                &ldquo;60&ndash;80% of the journey unfolds without guided context.&rdquo;
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "13px",
+                  lineHeight: 1.65,
+                  color: "rgba(245,243,239,0.65)",
+                  marginBottom: "16px",
+                  maxWidth: "480px",
+                }}
+              >
+                Most commentary is triggered at major landmarks. The quiet time between castles, villages, and scenic points often passes in silence.
+              </p>
+              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
+              <div
+                style={{
+                  backgroundColor: "#F5F3EF",
+                  border: "0.5px solid rgba(196,154,92,0.5)",
+                  borderRadius: "8px",
+                  padding: "14px 18px",
+                  maxWidth: "500px",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                    lineHeight: 1.5,
+                    color: "#1A1A2E",
+                  }}
+                >
+                  &ldquo;The journey was fine… but was expecting a narrated tour, but that did not occur.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            {/* Finding 4 */}
+            <div className="flex flex-col items-center text-center">
+              <p
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: "clamp(17px, 2.2vw, 20px)",
+                  lineHeight: 1.4,
+                  color: "#F5F3EF",
+                  marginBottom: "10px",
+                }}
+              >
+                &ldquo;Curiosity is constant. Answers are often missing.&rdquo;
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "13px",
+                  lineHeight: 1.65,
+                  color: "rgba(245,243,239,0.65)",
+                  marginBottom: "16px",
+                  maxWidth: "480px",
+                }}
+              >
+                Guests try to identify what they see in real time — Googling from the deck, taking repeated photos, asking each other what they just passed.
+              </p>
+              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
+              <div
+                style={{
+                  backgroundColor: "#F5F3EF",
+                  border: "0.5px solid rgba(196,154,92,0.5)",
+                  borderRadius: "8px",
+                  padding: "14px 18px",
+                  maxWidth: "500px",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                    lineHeight: 1.5,
+                    color: "#1A1A2E",
+                  }}
+                >
+                  &ldquo;Staff didn&apos;t know the landmarks… asked about the mountain… they didn&apos;t know.&rdquo;
+                </p>
+              </div>
+            </div>
+
+            {/* Finding 6 */}
+            <div className="flex flex-col items-center text-center">
+              <p
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontStyle: "italic",
+                  fontWeight: 500,
+                  fontSize: "clamp(17px, 2.2vw, 20px)",
+                  lineHeight: 1.4,
+                  color: "#F5F3EF",
+                  marginBottom: "10px",
+                }}
+              >
+                &ldquo;The journey itself often has no narrator.&rdquo;
+              </p>
+              <p
+                style={{
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontSize: "13px",
+                  lineHeight: 1.65,
+                  color: "rgba(245,243,239,0.65)",
+                  marginBottom: "16px",
+                  maxWidth: "480px",
+                }}
+              >
+                Guides cover landmarks. Excursions cover destinations. Port talks cover what comes next. But the journey in between is often left unexplained.
+              </p>
+              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
+              <div
+                style={{
+                  backgroundColor: "#F5F3EF",
+                  border: "0.5px solid rgba(196,154,92,0.5)",
+                  borderRadius: "8px",
+                  padding: "14px 18px",
+                  maxWidth: "500px",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontStyle: "italic",
+                    fontSize: "14px",
+                    lineHeight: 1.5,
+                    color: "#1A1A2E",
+                  }}
+                >
+                  &ldquo;The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing.&rdquo;
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Source attribution */}
+          <p
+            className="text-center mt-12"
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontSize: "11px",
+              lineHeight: 1.6,
+              color: "rgba(245,243,239,0.35)",
+            }}
+          >
+            Research drawn from Cruise Critic, TripAdvisor, River Cruise Advisor,
+            <br className="hidden sm:inline" />
+            {" "}Rick Steves Travel Forum, Viator, and independent travel blogs.
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* ── Closing typographic line ────────────────────────────────── */}
+      <ScrollReveal>
+        <div className="bg-[#FBFAF8] px-6 py-16 text-center">
+          <p
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontStyle: "italic",
+              fontWeight: 500,
+              fontSize: "clamp(20px, 3vw, 28px)",
+              lineHeight: 1.4,
+              color: "#1B3D2F",
+            }}
+          >
+            &ldquo;Extraordinary landscapes, quietly unexplained.&rdquo;
+          </p>
+        </div>
+      </ScrollReveal>
+
+      {/* ── Positioning line ────────────────────────────────────────── */}
+      <ScrollReveal>
+        <div className="bg-[#FBFAF8] px-8 pb-20 md:px-16">
+          <blockquote
+            style={{
+              borderLeft: "2px solid #C49A5C",
+              paddingLeft: "16px",
+              maxWidth: "560px",
+            }}
+          >
+            <p
+              style={{
+                fontFamily: "var(--font-playfair), serif",
+                fontWeight: 400,
+                fontStyle: "italic",
+                fontSize: "17px",
+                lineHeight: 1.5,
+                color: "#1B3D2F",
+              }}
+            >
+              Guides bring the highlights to life. The Host Atlas curates the silent stretches.
+            </p>
+          </blockquote>
+        </div>
+      </ScrollReveal>
 
     </section>
   );

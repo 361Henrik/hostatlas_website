@@ -91,9 +91,26 @@ export default function ClosingSection() {
           real sailing data
         </p>
 
+        {/* Finding 6 verbatim — final emotional beat before CTA */}
+        <p
+          className="mx-auto"
+          style={{
+            fontFamily: "var(--font-playfair), serif",
+            fontWeight: 400,
+            fontStyle: "italic",
+            fontSize: "clamp(18px, 2.2vw, 22px)",
+            lineHeight: 1.5,
+            color: "rgba(245,243,239,0.85)",
+            maxWidth: "560px",
+            padding: "40px 0",
+          }}
+        >
+          &ldquo;The scenery was extraordinary, but too often the journey passed
+          without explanation, leaving us to wonder what we were seeing.&rdquo;
+        </p>
+
         {/* Tagline echo */}
         <p
-          className="mt-8"
           style={{
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 400,

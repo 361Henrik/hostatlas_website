@@ -37,10 +37,10 @@ export default function Navigation() {
           <Image
             src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
             alt="The Host Atlas"
-            width={140}
-            height={28}
+            width={180}
+            height={54}
             priority
-            className="h-7 w-auto"
+            className="h-10 w-auto md:h-[54px]"
           />
           <span
             className="hidden md:block"
