@@ -1,162 +1,154 @@
 import Image from "next/image";
-import { CONTACT_EMAIL, SECTION_IDS } from "@/lib/constants";
+import { SECTION_IDS } from "@/lib/constants";
 
 export default function HeroSection() {
   return (
     <section
       id={SECTION_IDS.hero}
-      className="relative h-screen min-h-[680px] flex items-end overflow-hidden"
-      aria-label="Hero — The Host Atlas"
+      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* ── Background image ─────────────────────────────────────────── */}
-      {/* Local file. No Unsplash. No famous landmark. */}
+      {/* ── Background image ─────────────────────────────────────── */}
       <Image
         src="/images/hero-01.jpg"
-        alt="A river landscape seen from a vessel deck — unnamed hills, water ahead, world dominant"
+        alt=""
+        aria-hidden="true"
         fill
         priority
-        className="object-cover animate-ken-burns"
+        className="object-cover"
         style={{ zIndex: 0 }}
       />
 
-      {/* ── Overlay ──────────────────────────────────────────────────── */}
-      {/* rgba(0,0,0,0.42) — design system minimum for hero slot */}
+      {/* ── Overlay rgba(0,0,0,0.55) ─────────────────────────────── */}
       <div
         className="absolute inset-0"
-        style={{ backgroundColor: "rgba(0,0,0,0.42)", zIndex: 1 }}
+        style={{ backgroundColor: "rgba(0,0,0,0.55)", zIndex: 1 }}
         aria-hidden="true"
       />
 
-      {/* ── Content — bottom-left editorial layout ───────────────────── */}
+      {/* ── Content — centred ────────────────────────────────────── */}
       <div
-        className="relative w-full max-w-[1280px] mx-auto px-8 md:px-16 pb-20 md:pb-28"
+        className="relative text-center px-6 max-w-[720px] mx-auto"
         style={{ zIndex: 2 }}
       >
-        {/* Overline — cruise types, Inter 500, bronze, uppercase */}
+        {/* Overline */}
         <p
-          className="text-[#C49A5C] uppercase mb-7"
           style={{
             fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 500,
             fontSize: "11px",
-            letterSpacing: "0.09em",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "rgba(245,243,239,0.6)",
+            marginBottom: "28px",
           }}
         >
-          River · Coastal · Expedition
+          The Host Atlas
         </p>
 
-        {/* Headline — Playfair 500, large, tight leading */}
+        {/* Headline with quotation marks */}
         <h1
-          className="text-[#FBFAF8] mb-5"
           style={{
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 500,
-            fontSize: "clamp(44px, 5.5vw, 68px)",
-            lineHeight: 1.05,
-            letterSpacing: "-0.01em",
-            maxWidth: "13ch",
+            fontSize: "clamp(36px, 5vw, 56px)",
+            lineHeight: 1.1,
+            letterSpacing: "-0.02em",
+            color: "#F5F3EF",
+            marginBottom: "24px",
           }}
         >
-          What&apos;s that
-          <br />
-          over there?
+          &ldquo;What&rsquo;s that over there?&rdquo;
         </h1>
 
-        {/* Sub-headline — italic, Playfair, white/70 */}
+        {/* Sub-headline — italic */}
         <p
-          className="mb-5"
           style={{
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 400,
             fontStyle: "italic",
             fontSize: "clamp(18px, 2vw, 22px)",
-            lineHeight: 1.35,
-            color: "rgba(251,250,248,0.72)",
-            maxWidth: "38ch",
+            lineHeight: 1.45,
+            color: "rgba(245,243,239,0.82)",
+            marginBottom: "20px",
           }}
         >
-          The highlights are covered. The silent stretches aren&apos;t.
+          The question every guest asks. The one that rarely gets answered.
         </p>
 
-        {/* Tagline — Playfair italic, bronze — brand mark, not decoration */}
+        {/* Tagline — bronze */}
         <p
-          className="text-[#C49A5C] mb-9"
           style={{
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 400,
             fontStyle: "italic",
-            fontSize: "18px",
-            lineHeight: 1.4,
-            letterSpacing: "0.005em",
+            fontSize: "15px",
+            letterSpacing: "0.01em",
+            color: "#C49A5C",
+            marginBottom: "32px",
           }}
         >
           Curated narratives for the silent stretches
         </p>
 
-        {/* Bronze rule — jewellery, not paint */}
-        <div
-          className="bg-[#C49A5C] mb-9"
-          style={{ width: "40px", height: "1px" }}
-          aria-hidden="true"
-        />
-
-        {/* Body copy — Inter 400, white/78, constrained to 48ch */}
+        {/* Body */}
         <p
-          className="mb-10"
+          className="mx-auto"
           style={{
             fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 400,
             fontSize: "18px",
             lineHeight: 1.72,
-            color: "rgba(251,250,248,0.78)",
+            color: "rgba(245,243,239,0.78)",
             maxWidth: "48ch",
           }}
         >
-          The Host Atlas gives river, coastal, and expedition cruise operators
-          a contextual experience layer for the journey between the highlights
-          — turning what guests observe into something they understand.
+          The Host Atlas brings the landscape to life for guests on river
+          cruises, coastal voyages, and scenic journeys — quietly, without
+          interruption, exactly when they want it.
         </p>
-
-        {/* CTA — Inter 500, deep green on bronze, minimal radius */}
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="inline-flex items-center transition-opacity duration-300 ease-out hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C49A5C]"
-          style={{
-            fontFamily: "var(--font-inter), sans-serif",
-            fontWeight: 500,
-            fontSize: "15px",
-            letterSpacing: "0.01em",
-            color: "#1B3D2F",
-            backgroundColor: "#C49A5C",
-            paddingLeft: "32px",
-            paddingRight: "32px",
-            height: "48px",
-            borderRadius: "2px",
-          }}
-        >
-          Get in touch
-        </a>
       </div>
 
-      {/* ── Scroll indicator — bottom-right, bronze ──────────────────── */}
+      {/* ── Scroll indicator — bottom centre ─────────────────────── */}
       <div
-        className="absolute bottom-8 right-8 md:right-16 animate-scroll-pulse"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         style={{ zIndex: 2 }}
         aria-hidden="true"
       >
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          aria-hidden="true"
+        <span
+          style={{
+            fontFamily: "var(--font-inter), sans-serif",
+            fontSize: "10px",
+            letterSpacing: "0.12em",
+            textTransform: "uppercase",
+            color: "rgba(245,243,239,0.4)",
+          }}
         >
-          <path
-            d="M5 7.5l5 5 5-5"
-            stroke="#C49A5C"
-            strokeWidth="1.25"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+          Scroll
+        </span>
+        <svg
+          width="16"
+          height="24"
+          viewBox="0 0 16 24"
+          fill="none"
+          style={{ color: "rgba(245,243,239,0.4)" }}
+        >
+          <rect
+            x="1"
+            y="1"
+            width="14"
+            height="22"
+            rx="7"
+            stroke="currentColor"
+            strokeWidth="1.2"
+          />
+          <rect
+            x="7"
+            y="5"
+            width="2"
+            height="5"
+            rx="1"
+            fill="currentColor"
+            className="animate-bounce"
           />
         </svg>
       </div>
