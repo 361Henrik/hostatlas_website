@@ -318,204 +318,296 @@ export default function TheMomentSection() {
         </div>
       </div>
 
-      {/* ── Research Findings Block ─────────────────────────────────── */}
-      <ScrollReveal>
+      {/* ── Research Findings Block — atmospheric image bg ─────────── */}
+      <div className="relative overflow-hidden" style={{ backgroundColor: "#1B3D2F" }}>
+        {/* Background: coastal/expedition landscape at low opacity */}
+        <Image
+          src="/images/screen4-fjord-cliffs.jpg"
+          alt=""
+          aria-hidden="true"
+          fill
+          className="object-cover"
+          style={{ opacity: 0.18, zIndex: 0 }}
+        />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(27,61,47,0.82)", zIndex: 1 }} aria-hidden="true" />
+
         <div
+          className="relative"
           style={{
-            backgroundColor: "#1B3D2F",
-            padding: "clamp(40px, 7vw, 72px) clamp(24px, 5vw, 48px)",
+            zIndex: 2,
+            padding: "clamp(64px, 9vw, 112px) clamp(24px, 6vw, 96px)",
           }}
         >
           {/* Overline */}
-          <p
-            className="text-center mb-8"
-            style={{
-              fontFamily: "var(--font-inter), sans-serif",
-              fontWeight: 500,
-              fontSize: "10px",
-              letterSpacing: "0.09em",
-              textTransform: "uppercase",
-              color: "#C49A5C",
-            }}
-          >
-            From the research
-          </p>
+          <ScrollReveal>
+            <p
+              className="uppercase mb-5"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 500,
+                fontSize: "10px",
+                letterSpacing: "0.1em",
+                color: "#C49A5C",
+              }}
+            >
+              From the research
+            </p>
 
-          {/* Three findings */}
-          <div
-            className="flex flex-col mx-auto"
-            style={{ gap: "48px", maxWidth: "640px" }}
-          >
+            {/* Editorial intro — explains the gap */}
+            <h3
+              style={{
+                fontFamily: "var(--font-playfair), serif",
+                fontWeight: 500,
+                fontSize: "clamp(24px, 3vw, 34px)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.01em",
+                color: "#F5F3EF",
+                maxWidth: "20ch",
+              }}
+            >
+              The gap is not subtle. It is structural.
+            </h3>
+            <p
+              className="mt-5"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 400,
+                fontSize: "17px",
+                lineHeight: 1.72,
+                color: "rgba(245,243,239,0.75)",
+                maxWidth: "58ch",
+              }}
+            >
+              Across thousands of reviews of river, coastal, and expedition
+              cruises, a consistent pattern emerges. Guests are not passive.
+              They are watching, noticing, and asking questions throughout the
+              journey. The gap is not in the highlights — those are handled
+              well. The gap is in everything between them: the hours of sailing,
+              the unnamed landscapes, the passing villages no one explains. This
+              is where the product lives.
+            </p>
+          </ScrollReveal>
+
+          {/* Bronze divider */}
+          <div className="mt-14 mb-14" style={{ width: "48px", height: "1px", backgroundColor: "#C49A5C" }} aria-hidden="true" />
+
+          {/* Three findings — two-column rows: stat + verbatim */}
+          <div className="flex flex-col" style={{ gap: "56px", maxWidth: "900px" }}>
+
             {/* Finding 1 */}
-            <div className="flex flex-col items-center text-center">
-              <p
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                  fontSize: "clamp(17px, 2.2vw, 20px)",
-                  lineHeight: 1.4,
-                  color: "#F5F3EF",
-                  marginBottom: "10px",
-                }}
-              >
-                &ldquo;60&ndash;80% of the journey unfolds without guided context.&rdquo;
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "13px",
-                  lineHeight: 1.65,
-                  color: "rgba(245,243,239,0.65)",
-                  marginBottom: "16px",
-                  maxWidth: "480px",
-                }}
-              >
-                Most commentary is triggered at major landmarks. The quiet time between castles, villages, and scenic points often passes in silence.
-              </p>
-              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
-              <div
-                style={{
-                  backgroundColor: "#F5F3EF",
-                  border: "0.5px solid rgba(196,154,92,0.5)",
-                  borderRadius: "8px",
-                  padding: "14px 18px",
-                  maxWidth: "500px",
-                }}
-              >
-                <p
+            <ScrollReveal>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "10px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "rgba(245,243,239,0.4)",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Finding 01
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: "clamp(18px, 2vw, 22px)",
+                      lineHeight: 1.35,
+                      color: "#F5F3EF",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    60&ndash;80% of the journey unfolds without guided context.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "14px",
+                      lineHeight: 1.65,
+                      color: "rgba(245,243,239,0.6)",
+                    }}
+                  >
+                    Most commentary is triggered at major landmarks. The quiet time between castles, villages, and scenic points often passes in silence.
+                  </p>
+                </div>
+                <div
                   style={{
-                    fontFamily: "var(--font-playfair), serif",
-                    fontStyle: "italic",
-                    fontSize: "14px",
-                    lineHeight: 1.5,
-                    color: "#1A1A2E",
+                    backgroundColor: "#FBFAF8",
+                    borderRadius: "8px",
+                    padding: "20px 22px",
+                    borderLeft: "3px solid #C49A5C",
                   }}
                 >
-                  &ldquo;The journey was fine… but was expecting a narrated tour, but that did not occur.&rdquo;
-                </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontSize: "15px",
+                      lineHeight: 1.6,
+                      color: "#1A1A2E",
+                    }}
+                  >
+                    &ldquo;The journey was fine… but was expecting a narrated tour, but that did not occur.&rdquo;
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
 
-            {/* Finding 4 */}
-            <div className="flex flex-col items-center text-center">
-              <p
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                  fontSize: "clamp(17px, 2.2vw, 20px)",
-                  lineHeight: 1.4,
-                  color: "#F5F3EF",
-                  marginBottom: "10px",
-                }}
-              >
-                &ldquo;Curiosity is constant. Answers are often missing.&rdquo;
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "13px",
-                  lineHeight: 1.65,
-                  color: "rgba(245,243,239,0.65)",
-                  marginBottom: "16px",
-                  maxWidth: "480px",
-                }}
-              >
-                Guests try to identify what they see in real time — Googling from the deck, taking repeated photos, asking each other what they just passed.
-              </p>
-              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
-              <div
-                style={{
-                  backgroundColor: "#F5F3EF",
-                  border: "0.5px solid rgba(196,154,92,0.5)",
-                  borderRadius: "8px",
-                  padding: "14px 18px",
-                  maxWidth: "500px",
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-playfair), serif",
-                    fontStyle: "italic",
-                    fontSize: "14px",
-                    lineHeight: 1.5,
-                    color: "#1A1A2E",
-                  }}
-                >
-                  &ldquo;Staff didn&apos;t know the landmarks… asked about the mountain… they didn&apos;t know.&rdquo;
-                </p>
-              </div>
-            </div>
+            {/* Horizontal rule */}
+            <div style={{ height: "0.5px", backgroundColor: "rgba(245,243,239,0.12)" }} aria-hidden="true" />
 
-            {/* Finding 6 */}
-            <div className="flex flex-col items-center text-center">
-              <p
-                style={{
-                  fontFamily: "var(--font-playfair), serif",
-                  fontStyle: "italic",
-                  fontWeight: 500,
-                  fontSize: "clamp(17px, 2.2vw, 20px)",
-                  lineHeight: 1.4,
-                  color: "#F5F3EF",
-                  marginBottom: "10px",
-                }}
-              >
-                &ldquo;The journey itself often has no narrator.&rdquo;
-              </p>
-              <p
-                style={{
-                  fontFamily: "var(--font-inter), sans-serif",
-                  fontSize: "13px",
-                  lineHeight: 1.65,
-                  color: "rgba(245,243,239,0.65)",
-                  marginBottom: "16px",
-                  maxWidth: "480px",
-                }}
-              >
-                Guides cover landmarks. Excursions cover destinations. Port talks cover what comes next. But the journey in between is often left unexplained.
-              </p>
-              <div style={{ width: "1px", height: "12px", backgroundColor: "#C49A5C", marginBottom: "10px" }} aria-hidden="true" />
-              <div
-                style={{
-                  backgroundColor: "#F5F3EF",
-                  border: "0.5px solid rgba(196,154,92,0.5)",
-                  borderRadius: "8px",
-                  padding: "14px 18px",
-                  maxWidth: "500px",
-                }}
-              >
-                <p
+            {/* Finding 2 */}
+            <ScrollReveal>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "10px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "rgba(245,243,239,0.4)",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Finding 02
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: "clamp(18px, 2vw, 22px)",
+                      lineHeight: 1.35,
+                      color: "#F5F3EF",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    Curiosity is constant. Answers are often missing.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "14px",
+                      lineHeight: 1.65,
+                      color: "rgba(245,243,239,0.6)",
+                    }}
+                  >
+                    Guests try to identify what they see in real time — Googling from the deck, taking repeated photos, asking each other what they just passed.
+                  </p>
+                </div>
+                <div
                   style={{
-                    fontFamily: "var(--font-playfair), serif",
-                    fontStyle: "italic",
-                    fontSize: "14px",
-                    lineHeight: 1.5,
-                    color: "#1A1A2E",
+                    backgroundColor: "#FBFAF8",
+                    borderRadius: "8px",
+                    padding: "20px 22px",
+                    borderLeft: "3px solid #C49A5C",
                   }}
                 >
-                  &ldquo;The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing.&rdquo;
-                </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontSize: "15px",
+                      lineHeight: 1.6,
+                      color: "#1A1A2E",
+                    }}
+                  >
+                    &ldquo;Staff didn&apos;t know the landmarks… asked about the mountain… they didn&apos;t know.&rdquo;
+                  </p>
+                </div>
               </div>
-            </div>
+            </ScrollReveal>
+
+            {/* Horizontal rule */}
+            <div style={{ height: "0.5px", backgroundColor: "rgba(245,243,239,0.12)" }} aria-hidden="true" />
+
+            {/* Finding 3 */}
+            <ScrollReveal>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
+                <div>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "10px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "rgba(245,243,239,0.4)",
+                      marginBottom: "10px",
+                    }}
+                  >
+                    Finding 03
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontWeight: 500,
+                      fontSize: "clamp(18px, 2vw, 22px)",
+                      lineHeight: 1.35,
+                      color: "#F5F3EF",
+                      marginBottom: "12px",
+                    }}
+                  >
+                    The journey itself often has no narrator.
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "14px",
+                      lineHeight: 1.65,
+                      color: "rgba(245,243,239,0.6)",
+                    }}
+                  >
+                    Guides cover landmarks. Excursions cover destinations. Port talks cover what comes next. But the journey in between is often left unexplained.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    backgroundColor: "#FBFAF8",
+                    borderRadius: "8px",
+                    padding: "20px 22px",
+                    borderLeft: "3px solid #C49A5C",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontSize: "15px",
+                      lineHeight: 1.6,
+                      color: "#1A1A2E",
+                    }}
+                  >
+                    &ldquo;The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing.&rdquo;
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
           </div>
 
           {/* Source attribution */}
           <p
-            className="text-center mt-12"
+            className="mt-16"
             style={{
               fontFamily: "var(--font-inter), sans-serif",
               fontSize: "11px",
               lineHeight: 1.6,
-              color: "rgba(245,243,239,0.35)",
+              color: "rgba(245,243,239,0.28)",
             }}
           >
-            Research drawn from Cruise Critic, TripAdvisor, River Cruise Advisor,
-            <br className="hidden sm:inline" />
-            {" "}Rick Steves Travel Forum, Viator, and independent travel blogs.
+            Research drawn from Cruise Critic, TripAdvisor, River Cruise Advisor, Rick Steves Travel Forum, Viator, and independent travel blogs.
           </p>
         </div>
-      </ScrollReveal>
+      </div>
 
       {/* ── Closing typographic line ────────────────────────────────── */}
       <ScrollReveal>

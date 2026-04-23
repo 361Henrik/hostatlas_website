@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Navigation() {
@@ -33,21 +32,29 @@ export default function Navigation() {
       ].join(" ")}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex flex-col gap-0.5">
-          <Image
-            src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
-            alt="The Host Atlas"
-            width={180}
-            height={54}
-            priority
-            className="h-10 w-auto md:h-[54px]"
-          />
+        <div className="flex flex-col gap-1">
+          {/* Typographic logotype — crisp at all sizes, no PNG dependency */}
+          <span
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 500,
+              fontStyle: "italic",
+              fontSize: "clamp(17px, 1.8vw, 21px)",
+              letterSpacing: "0.01em",
+              lineHeight: 1.1,
+              color: scrolled ? "#1A1A2E" : "#FBFAF8",
+            }}
+          >
+            The Host Atlas
+          </span>
           <span
             className="hidden md:block"
             style={{
-              fontFamily: "var(--font-playfair), serif",
-              fontStyle: "italic",
-              fontSize: "11px",
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "10px",
+              letterSpacing: "0.07em",
+              textTransform: "uppercase",
               color: scrolled ? "rgba(26,26,46,0.38)" : "rgba(245,243,239,0.38)",
             }}
           >

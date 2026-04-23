@@ -78,116 +78,21 @@ export default function TheExperienceSection() {
             </p>
           </ScrollReveal>
 
-          {/* ── Demo video — landscape ───────────────────────────── */}
+          {/* ── Demo video — clean, no overlaid UI ──────────────── */}
           <ScrollReveal delay={80} className="mt-12">
             <div
-              className="w-full rounded-xl overflow-hidden relative"
+              className="w-full rounded-xl overflow-hidden"
               style={{ aspectRatio: "16/9", backgroundColor: "#1B3D2F" }}
             >
-              {/* Video background */}
               <video
                 src="/video/hostatlas-demo.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
-                aria-label="The Host Atlas demo — points of interest surfaced in real time as the vessel moves"
+                className="w-full h-full object-cover"
+                aria-label="The Host Atlas demo — contextual stories surfaced as the vessel moves"
               />
-              {/* Subtle overlay to ensure UI elements stay legible */}
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: "rgba(27,61,47,0.35)" }}
-              />
-
-              {/* Status bar */}
-              <div
-                className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-2.5"
-                style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-inter), sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    color: "rgba(255,255,255,0.9)",
-                  }}
-                >
-                  The Host Atlas · Live · Rhine Valley
-                </span>
-                <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)" }}>● GPS</span>
-              </div>
-
-              {/* POI cards */}
-              <div className="absolute top-12 left-0 right-0 flex items-start justify-around px-6 pt-4 gap-3">
-                {POI_CARDS.map((card) => (
-                  <div key={card.title} className="flex flex-col items-center" style={{ maxWidth: "180px" }}>
-                    <div
-                      className="rounded-lg w-full"
-                      style={{
-                        padding: "10px 12px",
-                        background: "rgba(27,61,47,0.92)",
-                        border: "0.5px solid #C49A5C",
-                      }}
-                    >
-                      <p
-                        style={{
-                          fontFamily: "var(--font-inter), sans-serif",
-                          fontWeight: 500,
-                          fontSize: "9px",
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          color: "#C49A5C",
-                        }}
-                      >
-                        {card.category}
-                      </p>
-                      <p
-                        className="mt-0.5"
-                        style={{
-                          fontFamily: "var(--font-playfair), serif",
-                          fontStyle: "italic",
-                          fontSize: "11px",
-                          lineHeight: 1.35,
-                          color: "#FBFAF8",
-                        }}
-                      >
-                        {card.title}
-                      </p>
-                      <p
-                        className="mt-0.5"
-                        style={{
-                          fontFamily: "var(--font-inter), sans-serif",
-                          fontSize: "9px",
-                          color: "rgba(251,250,248,0.55)",
-                        }}
-                      >
-                        {card.sub}
-                      </p>
-                    </div>
-                    <div style={{ width: "1px", height: "14px", backgroundColor: "#C49A5C", marginTop: "3px" }} />
-                    <div style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "#C49A5C" }} />
-                  </div>
-                ))}
-              </div>
-
-              {/* Mini-map */}
-              <div
-                className="absolute bottom-4 left-4 rounded-lg"
-                style={{
-                  padding: "8px 12px",
-                  background: "rgba(27,61,47,0.92)",
-                  border: "0.5px solid rgba(196,154,92,0.4)",
-                  minWidth: "110px",
-                }}
-              >
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(196,154,92,0.8)" }}>
-                  Rhine Gorge
-                </p>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "10px", color: "rgba(251,250,248,0.65)", marginTop: "2px" }}>
-                  3 nearby stories
-                </p>
-              </div>
             </div>
             <p
               className="mt-4 text-center"
@@ -197,8 +102,59 @@ export default function TheExperienceSection() {
                 color: "rgba(26,26,46,0.5)",
               }}
             >
-              What the guest sees — points of interest surfaced in real time, as the vessel moves through the route.
+              Contextual stories surfaced in real time, as the vessel moves through the route.
             </p>
+
+            {/* POI example cards — below the video, not overlaid on it */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
+              {POI_CARDS.map((card) => (
+                <div
+                  key={card.title}
+                  className="flex-1 rounded-lg"
+                  style={{
+                    padding: "16px 18px",
+                    backgroundColor: "#1B3D2F",
+                    maxWidth: "260px",
+                    margin: "0 auto",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "9px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#C49A5C",
+                    }}
+                  >
+                    {card.category}
+                  </p>
+                  <p
+                    className="mt-1.5"
+                    style={{
+                      fontFamily: "var(--font-playfair), serif",
+                      fontStyle: "italic",
+                      fontSize: "14px",
+                      lineHeight: 1.35,
+                      color: "#FBFAF8",
+                    }}
+                  >
+                    {card.title}
+                  </p>
+                  <p
+                    className="mt-1"
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontSize: "11px",
+                      color: "rgba(251,250,248,0.5)",
+                    }}
+                  >
+                    {card.sub}
+                  </p>
+                </div>
+              ))}
+            </div>
           </ScrollReveal>
         </div>
       </div>
@@ -306,6 +262,119 @@ export default function TheExperienceSection() {
           >
             What the guest holds — personalised, quiet, offline-ready.
           </p>
+        </div>
+      </ScrollReveal>
+
+      {/* ── Content-lens showcase — what it surfaces ─────────────── */}
+      <ScrollReveal>
+        <div
+          className="py-20 px-6 md:py-28"
+          style={{ backgroundColor: "#F5F3EF" }}
+        >
+          <div className="max-w-[860px] mx-auto">
+            <p
+              className="uppercase mb-4"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontWeight: 500,
+                fontSize: "11px",
+                letterSpacing: "0.08em",
+                color: "#1B3D2F",
+              }}
+            >
+              What it surfaces
+            </p>
+            <h3
+              style={{
+                fontFamily: "var(--font-playfair), serif",
+                fontWeight: 500,
+                fontSize: "clamp(22px, 2.8vw, 32px)",
+                lineHeight: 1.15,
+                color: "#1A1A2E",
+                maxWidth: "28ch",
+              }}
+            >
+              Six lenses. Every one curated by hand.
+            </h3>
+            <p
+              className="mt-5 mb-12"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "16px",
+                lineHeight: 1.7,
+                color: "rgba(26,26,46,0.6)",
+                maxWidth: "52ch",
+              }}
+            >
+              The Host Atlas curates contextual stories across the full range
+              of what makes a landscape worth understanding — not just the
+              famous castles, but the farms, the rock formations, the folklore,
+              the food.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {[
+                {
+                  category: "History",
+                  example: "Fortified settlements, trade routes, river battles — what the landscape once decided.",
+                },
+                {
+                  category: "Geology",
+                  example: "The formations that shaped the valley — Devonian slate, glacial carving, ancient seabed.",
+                },
+                {
+                  category: "Local producers",
+                  example: "The vineyard behind the vine rows. The fishermen's cooperative. The dairy that's been there since 1847.",
+                },
+                {
+                  category: "Architecture",
+                  example: "Tower houses, fortified churches, Romanesque bridges — and why they stand where they do.",
+                },
+                {
+                  category: "Folklore & culture",
+                  example: "The legend the village still tells. The festival that shapes the calendar. The name nobody translates.",
+                },
+                {
+                  category: "Food & land",
+                  example: "What this particular valley grows, fishes, cures, and brews — and has done for generations.",
+                },
+              ].map((lens) => (
+                <div
+                  key={lens.category}
+                  className="rounded-lg"
+                  style={{
+                    padding: "20px",
+                    backgroundColor: "#FBFAF8",
+                    border: "0.5px solid rgba(196,154,92,0.3)",
+                  }}
+                >
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 500,
+                      fontSize: "9px",
+                      letterSpacing: "0.1em",
+                      textTransform: "uppercase",
+                      color: "#C49A5C",
+                      marginBottom: "8px",
+                    }}
+                  >
+                    {lens.category}
+                  </p>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-inter), sans-serif",
+                      fontWeight: 400,
+                      fontSize: "13px",
+                      lineHeight: 1.6,
+                      color: "rgba(26,26,46,0.65)",
+                    }}
+                  >
+                    {lens.example}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </ScrollReveal>
 

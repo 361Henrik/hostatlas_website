@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { CONTACT_EMAIL, SECTION_IDS } from "@/lib/constants";
+import { SECTION_IDS } from "@/lib/constants";
 
 export default function HeroSection() {
   return (
@@ -27,99 +27,80 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Content — centred editorial layout, max-width 680px ────────── */}
+      {/* ── Content — left-aligned, max-width 1280px container, left half ── */}
       <div
-        className="relative w-full flex flex-col items-center text-center px-8"
-        style={{ zIndex: 2, maxWidth: "680px", margin: "0 auto" }}
+        className="relative w-full px-8 md:px-16"
+        style={{ zIndex: 2, maxWidth: "1280px", margin: "0 auto" }}
       >
-        {/* Headline — Playfair 500, large, tight leading */}
-        <h1
-          className="text-[#FBFAF8] mb-5"
-          style={{
-            fontFamily: "var(--font-playfair), serif",
-            fontWeight: 500,
-            fontSize: "clamp(44px, 5.5vw, 68px)",
-            lineHeight: 1.05,
-            letterSpacing: "-0.01em",
-          }}
-        >
-          What&apos;s that
-          <br />
-          over there?
-        </h1>
+        <div style={{ maxWidth: "540px" }}>
+          {/* Headline */}
+          <h1
+            className="text-[#FBFAF8] mb-5"
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 500,
+              fontSize: "clamp(44px, 5.5vw, 68px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.01em",
+            }}
+          >
+            What&apos;s that
+            <br />
+            over there?
+          </h1>
 
-        {/* Sub-headline — italic, Playfair, white/70 */}
-        <p
-          className="mb-5"
-          style={{
-            fontFamily: "var(--font-playfair), serif",
-            fontWeight: 400,
-            fontStyle: "italic",
-            fontSize: "clamp(18px, 2vw, 22px)",
-            lineHeight: 1.35,
-            color: "rgba(251,250,248,0.72)",
-          }}
-        >
-          The highlights are covered. The silent stretches aren&apos;t.
-        </p>
+          {/* Sub-headline */}
+          <p
+            className="mb-5"
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 400,
+              fontStyle: "italic",
+              fontSize: "clamp(18px, 2vw, 22px)",
+              lineHeight: 1.35,
+              color: "rgba(251,250,248,0.72)",
+            }}
+          >
+            The highlights are covered. The silent stretches aren&apos;t.
+          </p>
 
-        {/* Tagline — Playfair italic, bronze — brand mark, not decoration */}
-        <p
-          className="text-[#C49A5C] mb-9"
-          style={{
-            fontFamily: "var(--font-playfair), serif",
-            fontWeight: 400,
-            fontStyle: "italic",
-            fontSize: "18px",
-            lineHeight: 1.4,
-            letterSpacing: "0.005em",
-          }}
-        >
-          Curated narratives for the silent stretches
-        </p>
+          {/* Tagline — bronze brand mark */}
+          <p
+            className="text-[#C49A5C] mb-9"
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontWeight: 400,
+              fontStyle: "italic",
+              fontSize: "18px",
+              lineHeight: 1.4,
+              letterSpacing: "0.005em",
+            }}
+          >
+            Curated narratives for the silent stretches
+          </p>
 
-        {/* Bronze rule — centred */}
-        <div
-          className="bg-[#C49A5C] mb-9"
-          style={{ width: "40px", height: "1px" }}
-          aria-hidden="true"
-        />
+          {/* Bronze rule */}
+          <div
+            className="bg-[#C49A5C] mb-9"
+            style={{ width: "40px", height: "1px" }}
+            aria-hidden="true"
+          />
 
-        {/* Body copy — Inter 400, white/78 */}
-        <p
-          className="mb-10"
-          style={{
-            fontFamily: "var(--font-inter), sans-serif",
-            fontWeight: 400,
-            fontSize: "18px",
-            lineHeight: 1.72,
-            color: "rgba(251,250,248,0.78)",
-          }}
-        >
-          The Host Atlas gives river, coastal, and expedition cruise operators
-          a contextual experience layer for the journey between the highlights
-          — turning what guests observe into something they understand.
-        </p>
-
-        {/* CTA — Inter 500, deep green on bronze, minimal radius */}
-        <a
-          href={`mailto:${CONTACT_EMAIL}`}
-          className="inline-flex items-center transition-opacity duration-300 ease-out hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C49A5C]"
-          style={{
-            fontFamily: "var(--font-inter), sans-serif",
-            fontWeight: 500,
-            fontSize: "15px",
-            letterSpacing: "0.01em",
-            color: "#1B3D2F",
-            backgroundColor: "#C49A5C",
-            paddingLeft: "32px",
-            paddingRight: "32px",
-            height: "48px",
-            borderRadius: "2px",
-          }}
-        >
-          Get in touch
-        </a>
+          {/* Body copy */}
+          <p
+            style={{
+              fontFamily: "var(--font-inter), sans-serif",
+              fontWeight: 400,
+              fontSize: "18px",
+              lineHeight: 1.72,
+              color: "rgba(251,250,248,0.78)",
+            }}
+          >
+            The Host Atlas gives river, coastal, and expedition cruise operators
+            a contextual experience layer for the journey between the highlights
+            — turning what guests observe into something they understand.
+          </p>
+        </div>
       </div>
 
       {/* ── Scroll indicator — bottom-right, bronze ──────────────────── */}

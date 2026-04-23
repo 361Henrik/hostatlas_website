@@ -229,99 +229,139 @@ export default function OperatorSection() {
             </div>
           </div>
 
-          {/* ── Right column — CSS phone mockup (white-label PWA) ── */}
-          <ScrollReveal delay={160} className="hidden lg:flex flex-col items-center gap-4 sticky top-24">
-            {/* Portrait phone frame */}
+          {/* ── Right column — how we work together ─────────────── */}
+          <ScrollReveal delay={160} className="hidden lg:block sticky top-24">
             <div
-              className="relative"
+              className="rounded-2xl"
               style={{
-                width: "260px",
-                height: "520px",
-                backgroundColor: "#1B3D2F",
-                borderRadius: "32px",
-                border: "2px solid rgba(196,154,92,0.3)",
-                overflow: "hidden",
-                boxShadow: "0 28px 72px rgba(27,61,47,0.20), 0 4px 16px rgba(0,0,0,0.10)",
+                backgroundColor: "#F5F3EF",
+                padding: "40px",
+                border: "0.5px solid rgba(196,154,92,0.25)",
               }}
-              aria-label="Operator-branded Host Atlas PWA mockup"
             >
-              {/* Operator top bar */}
-              <div
-                className="flex items-center justify-between px-5 py-3"
-                style={{ backgroundColor: "#1B3D2F", borderBottom: "0.5px solid rgba(196,154,92,0.2)" }}
-              >
-                {/* Operator logo placeholder */}
-                <div
-                  style={{
-                    width: "80px",
-                    height: "14px",
-                    borderRadius: "2px",
-                    backgroundColor: "rgba(196,154,92,0.35)",
-                  }}
-                  aria-label="Operator logo area"
-                />
-                <span style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", color: "#C49A5C" }}>● Live</span>
-              </div>
-
-              {/* Route name */}
-              <div className="px-5 py-3" style={{ borderBottom: "0.5px solid rgba(255,255,255,0.06)" }}>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(196,154,92,0.7)" }}>Current route</p>
-                <p style={{ fontFamily: "var(--font-playfair), serif", fontStyle: "italic", fontSize: "14px", color: "#F5F3EF", marginTop: "2px" }}>Rhine Valley · Day 3</p>
-              </div>
-
-              {/* Map area */}
-              <div
+              <p
                 style={{
-                  height: "150px",
-                  background: "linear-gradient(180deg, #1e4a37 0%, #2a6048 100%)",
-                  position: "relative",
-                  borderBottom: "0.5px solid rgba(196,154,92,0.15)",
+                  fontFamily: "var(--font-inter), sans-serif",
+                  fontWeight: 500,
+                  fontSize: "10px",
+                  letterSpacing: "0.1em",
+                  textTransform: "uppercase",
+                  color: "#C49A5C",
+                  marginBottom: "10px",
                 }}
               >
-                <svg className="absolute inset-0 w-full h-full" aria-hidden="true">
-                  <path d="M20 140 Q80 100 130 80 Q180 60 240 40" stroke="#C49A5C" strokeWidth="1.5" strokeDasharray="4 3" fill="none" opacity="0.65" />
-                  <circle cx="130" cy="80" r="5" fill="#C49A5C" />
-                  <circle cx="130" cy="80" r="11" fill="rgba(196,154,92,0.18)" />
-                </svg>
-                <div className="absolute bottom-3 right-3 rounded" style={{ padding: "3px 8px", backgroundColor: "rgba(0,0,0,0.35)" }}>
-                  <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", color: "rgba(251,250,248,0.75)", letterSpacing: "0.06em" }}>Loreley · 4.2 km</p>
-                </div>
-              </div>
-
-              {/* Story card */}
-              <div className="mx-4 mt-4 rounded-lg" style={{ padding: "12px 14px", backgroundColor: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(196,154,92,0.35)" }}>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#C49A5C" }}>History</p>
-                <p style={{ fontFamily: "var(--font-playfair), serif", fontStyle: "italic", fontSize: "13px", lineHeight: 1.35, color: "#FBFAF8", marginTop: "3px" }}>Die Loreley · 1245</p>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", lineHeight: 1.5, color: "rgba(251,250,248,0.5)", marginTop: "4px" }}>The rocky headland that has shaped river navigation for eight centuries.</p>
-              </div>
-
-              {/* Story card 2 */}
-              <div className="mx-4 mt-2 rounded-lg" style={{ padding: "12px 14px", backgroundColor: "rgba(255,255,255,0.06)", border: "0.5px solid rgba(196,154,92,0.35)" }}>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.1em", textTransform: "uppercase", color: "#C49A5C" }}>Geology</p>
-                <p style={{ fontFamily: "var(--font-playfair), serif", fontStyle: "italic", fontSize: "13px", lineHeight: 1.35, color: "#FBFAF8", marginTop: "3px" }}>Devonian slate formation</p>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", lineHeight: 1.5, color: "rgba(251,250,248,0.5)", marginTop: "4px" }}>380 million years old.</p>
-              </div>
-
-              {/* Branding strip */}
-              <div
-                className="absolute bottom-0 left-0 right-0 flex items-center justify-center py-2"
-                style={{ backgroundColor: "rgba(27,61,47,0.97)", borderTop: "0.5px solid rgba(196,154,92,0.15)" }}
+                How we work
+              </p>
+              <h3
+                style={{
+                  fontFamily: "var(--font-playfair), serif",
+                  fontWeight: 500,
+                  fontSize: "22px",
+                  lineHeight: 1.2,
+                  color: "#1A1A2E",
+                  marginBottom: "32px",
+                }}
               >
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "8px", letterSpacing: "0.07em", textTransform: "uppercase", color: "rgba(196,154,92,0.55)" }}>Powered by The Host Atlas</p>
+                A close collaboration from brief to launch.
+              </h3>
+
+              {/* Timeline steps */}
+              <div className="flex flex-col" style={{ gap: "0px" }}>
+                {[
+                  {
+                    step: "01",
+                    label: "Brief",
+                    body: "We start with your routes, your brand, and your guest. What they should feel. What they should understand. What stays private.",
+                  },
+                  {
+                    step: "02",
+                    label: "Research & write",
+                    body: "Our editorial team researches and writes every story to your brief — structured, reviewed, and sent to you for sign-off before any guest sees it.",
+                  },
+                  {
+                    step: "03",
+                    label: "Approve",
+                    body: "Nothing goes live without your approval. You review every piece of content. The tone, the detail, the emphasis — all signed off by you.",
+                  },
+                  {
+                    step: "04",
+                    label: "Launch",
+                    body: "We configure the platform to your route, deliver a QR activation mechanic that fits your workflow, and remain on hand as the route evolves.",
+                  },
+                ].map((item, i, arr) => (
+                  <div key={item.step} className="flex gap-6">
+                    {/* Step marker column */}
+                    <div className="flex flex-col items-center" style={{ minWidth: "36px" }}>
+                      <div
+                        className="flex items-center justify-center flex-shrink-0"
+                        style={{
+                          width: "36px",
+                          height: "36px",
+                          borderRadius: "50%",
+                          border: "1.5px solid #1B3D2F",
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 500,
+                          fontSize: "11px",
+                          color: "#1B3D2F",
+                        }}
+                      >
+                        {item.step}
+                      </div>
+                      {/* Connector line — not on last item */}
+                      {i < arr.length - 1 && (
+                        <div style={{ width: "1px", flex: 1, backgroundColor: "rgba(27,61,47,0.15)", marginTop: "4px", marginBottom: "4px", minHeight: "28px" }} />
+                      )}
+                    </div>
+
+                    {/* Step content */}
+                    <div style={{ paddingTop: "6px", paddingBottom: i < arr.length - 1 ? "24px" : "0px" }}>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 500,
+                          fontSize: "15px",
+                          color: "#1A1A2E",
+                          marginBottom: "6px",
+                        }}
+                      >
+                        {item.label}
+                      </p>
+                      <p
+                        style={{
+                          fontFamily: "var(--font-inter), sans-serif",
+                          fontWeight: 400,
+                          fontSize: "14px",
+                          lineHeight: 1.65,
+                          color: "rgba(26,26,46,0.58)",
+                        }}
+                      >
+                        {item.body}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Closing note */}
+              <div
+                className="mt-10"
+                style={{ borderTop: "0.5px solid rgba(196,154,92,0.3)", paddingTop: "20px" }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-playfair), serif",
+                    fontWeight: 400,
+                    fontStyle: "italic",
+                    fontSize: "15px",
+                    lineHeight: 1.5,
+                    color: "#1B3D2F",
+                  }}
+                >
+                  We are currently working with a select number of operators.
+                  If this is the right fit for your route, we would like to hear from you.
+                </p>
               </div>
             </div>
-
-            <p
-              className="text-center"
-              style={{
-                fontFamily: "var(--font-inter), sans-serif",
-                fontSize: "13px",
-                color: "rgba(26,26,46,0.45)",
-                maxWidth: "28ch",
-              }}
-            >
-              The guest experience carries your identity
-            </p>
           </ScrollReveal>
 
         </div>
