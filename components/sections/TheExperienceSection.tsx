@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ScrollReveal from "@/components/ScrollReveal";
 import { SECTION_IDS } from "@/lib/constants";
 
@@ -40,21 +41,12 @@ const STEPS = [
   },
 ];
 
-const POI_CARDS = [
-  { category: "History", title: "Medieval fortification · c.\u00a01280", sub: "340m ahead" },
-  { category: "Local producers", title: "Weingut Becker estate · Riesling", sub: "Since 1847" },
-  { category: "Geology", title: "Devonian slate formation", sub: "380 million years old" },
-];
-
 export default function TheExperienceSection() {
   return (
-    <section id={SECTION_IDS.experience}>
+    <section id={SECTION_IDS.experience} style={{ backgroundColor: "#FBFAF8" }}>
 
-      {/* ── Upper panel — warm white ──────────────────────────────── */}
-      <div
-        className="py-24 px-6 md:py-32"
-        style={{ backgroundColor: "#FBFAF8" }}
-      >
+      {/* ── Intro copy ───────────────────────────────────────────────── */}
+      <div className="py-24 px-6 md:py-32">
         <div className="max-w-[860px] mx-auto">
           <ScrollReveal>
             <p
@@ -99,132 +91,66 @@ export default function TheExperienceSection() {
             </p>
           </ScrollReveal>
 
-          {/* ── Demo video — landscape ───────────────────────────── */}
+          {/* ── Video — clean, no overlay ─────────────────────────── */}
           <ScrollReveal delay={80} className="mt-12">
             <div
-              className="w-full rounded-xl overflow-hidden relative"
-              style={{ aspectRatio: "16/9", backgroundColor: "#1B3D2F" }}
+              className="w-full rounded-xl overflow-hidden"
+              style={{
+                aspectRatio: "16/9",
+                backgroundColor: "#1B3D2F",
+              }}
             >
-              {/* Video background */}
               <video
                 src="/video/hostatlas-demo.mp4"
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="absolute inset-0 w-full h-full object-cover"
+                className="w-full h-full object-cover"
                 aria-label="The Host Atlas demo — points of interest surfaced in real time as the vessel moves"
               />
-              {/* Subtle overlay to ensure UI elements stay legible */}
-              <div
-                className="absolute inset-0"
-                style={{ backgroundColor: "rgba(27,61,47,0.35)" }}
-              />
-
-              {/* Status bar */}
-              <div
-                className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-2.5"
-                style={{ backgroundColor: "rgba(0,0,0,0.28)" }}
-              >
-                <span
-                  style={{
-                    fontFamily: "var(--font-inter), sans-serif",
-                    fontWeight: 500,
-                    fontSize: "11px",
-                    color: "rgba(255,255,255,0.9)",
-                  }}
-                >
-                  The Host Atlas · Live · Rhine Valley
-                </span>
-                <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)" }}>● GPS</span>
-              </div>
-
-              {/* POI cards */}
-              <div className="absolute top-12 left-0 right-0 flex items-start justify-around px-6 pt-4 gap-3">
-                {POI_CARDS.map((card) => (
-                  <div key={card.title} className="flex flex-col items-center" style={{ maxWidth: "180px" }}>
-                    <div
-                      className="rounded-lg w-full"
-                      style={{
-                        padding: "10px 12px",
-                        background: "rgba(27,61,47,0.92)",
-                        border: "0.5px solid #C49A5C",
-                      }}
-                    >
-                      <p
-                        style={{
-                          fontFamily: "var(--font-inter), sans-serif",
-                          fontWeight: 500,
-                          fontSize: "9px",
-                          letterSpacing: "0.1em",
-                          textTransform: "uppercase",
-                          color: "#C49A5C",
-                        }}
-                      >
-                        {card.category}
-                      </p>
-                      <p
-                        className="mt-0.5"
-                        style={{
-                          fontFamily: "var(--font-playfair), serif",
-                          fontStyle: "italic",
-                          fontSize: "11px",
-                          lineHeight: 1.35,
-                          color: "#FBFAF8",
-                        }}
-                      >
-                        {card.title}
-                      </p>
-                      <p
-                        className="mt-0.5"
-                        style={{
-                          fontFamily: "var(--font-inter), sans-serif",
-                          fontSize: "9px",
-                          color: "rgba(251,250,248,0.55)",
-                        }}
-                      >
-                        {card.sub}
-                      </p>
-                    </div>
-                    <div style={{ width: "1px", height: "14px", backgroundColor: "#C49A5C", marginTop: "3px" }} />
-                    <div style={{ width: "4px", height: "4px", borderRadius: "50%", backgroundColor: "#C49A5C" }} />
-                  </div>
-                ))}
-              </div>
-
-              {/* Mini-map */}
-              <div
-                className="absolute bottom-4 left-4 rounded-lg"
-                style={{
-                  padding: "8px 12px",
-                  background: "rgba(27,61,47,0.92)",
-                  border: "0.5px solid rgba(196,154,92,0.4)",
-                  minWidth: "110px",
-                }}
-              >
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "9px", letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(196,154,92,0.8)" }}>
-                  Rhine Gorge
-                </p>
-                <p style={{ fontFamily: "var(--font-inter), sans-serif", fontSize: "10px", color: "rgba(251,250,248,0.65)", marginTop: "2px" }}>
-                  3 nearby stories
-                </p>
-              </div>
             </div>
             <p
               className="mt-4 text-center"
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "13px",
-                color: "rgba(26,26,46,0.5)",
+                color: "rgba(26,26,46,0.45)",
               }}
             >
               What the guest sees — points of interest surfaced in real time, as the vessel moves through the route.
             </p>
           </ScrollReveal>
+
+          {/* ── Product image — screen3-demo.jpg ─────────────────── */}
+          <ScrollReveal delay={120} className="mt-10">
+            <div
+              className="w-full rounded-xl overflow-hidden"
+              style={{ aspectRatio: "16/9" }}
+            >
+              <Image
+                src="/images/screen3-demo.jpg"
+                alt="The Host Atlas interface — route context delivered to the guest's browser in real time"
+                width={1600}
+                height={900}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <p
+              className="mt-4 text-center"
+              style={{
+                fontFamily: "var(--font-inter), sans-serif",
+                fontSize: "13px",
+                color: "rgba(26,26,46,0.45)",
+              }}
+            >
+              The interface opens in the guest&apos;s phone browser — no installation required.
+            </p>
+          </ScrollReveal>
         </div>
       </div>
 
-      {/* ── Lower panel — off-white ───────────────────────────────── */}
+      {/* ── How it works — 3 steps ───────────────────────────────────── */}
       <div
         className="py-24 px-6 md:py-32"
         style={{ backgroundColor: "#F5F3EF" }}
@@ -262,14 +188,14 @@ export default function TheExperienceSection() {
           </ScrollReveal>
 
           {/* Three steps */}
-          <div className="flex flex-col sm:flex-row gap-12 justify-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-12 justify-center mt-14">
             {STEPS.map((step, i) => (
               <ScrollReveal
                 key={step.label}
                 delay={i * 80}
                 className="flex flex-col items-center text-center mx-auto sm:mx-0 max-w-[200px]"
               >
-                <div style={{ color: "#1B3D2F", marginBottom: "12px" }}>{step.icon}</div>
+                <div style={{ color: "#1B3D2F", marginBottom: "14px" }}>{step.icon}</div>
                 <p
                   style={{
                     fontFamily: "var(--font-playfair), serif",
@@ -295,14 +221,14 @@ export default function TheExperienceSection() {
             ))}
           </div>
 
-          <ScrollReveal delay={240} className="mt-10 text-center">
+          <ScrollReveal delay={240} className="mt-12 text-center">
             <p
               className="mx-auto"
               style={{
                 fontFamily: "var(--font-inter), sans-serif",
                 fontSize: "16px",
                 lineHeight: 1.72,
-                color: "rgba(26,26,46,0.6)",
+                color: "rgba(26,26,46,0.55)",
                 maxWidth: "52ch",
               }}
             >
