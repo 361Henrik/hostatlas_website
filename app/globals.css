@@ -1,19 +1,22 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #F6F3EE;
-  --color-card: #E8E2D9;
-  --color-foreground: #1A1F1A;
-  --color-muted-foreground: #6E6A5E;
-  --color-deep-green: #1F4A3A;
-  --color-primary: #C35C3C;
-  --color-accent: #C9A962;
-  --color-border: #CCC4B8;
+  /* ── Design-system colour tokens (strict — no other colours permitted) ── */
+  --color-green:      #1B3D2F; /* Deep Forest Green — green panel backgrounds */
+  --color-white:      #FBFAF8; /* Warm White — white panel backgrounds */
+  --color-off-white:  #F5F3EF; /* Warm Off-White — text on green panels */
+  --color-text:       #1A1A2E; /* Near Black — all text on white panels */
+  --color-bronze:     #C49A5C; /* Antique Bronze — accent only */
+
+  /* ── Semantic aliases for Tailwind utility classes ──────────────────── */
+  --color-background: #FBFAF8;
+  --color-foreground: #1A1A2E;
+  --color-border:     rgba(26,26,46,0.12);
 }
 
 @theme inline {
   --font-display: var(--font-playfair), serif;
-  --font-body: var(--font-inter), sans-serif;
+  --font-body:    var(--font-inter), sans-serif;
 }
 
 html {
@@ -21,8 +24,8 @@ html {
 }
 
 body {
-  background-color: #F6F3EE;
-  color: #1A1F1A;
+  background-color: #FBFAF8;
+  color: #1A1A2E;
   font-family: var(--font-inter), sans-serif;
 }
 
