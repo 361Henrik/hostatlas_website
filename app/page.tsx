@@ -7,6 +7,7 @@ import PersonalRelevanceSection from "@/components/sections/PersonalRelevanceSec
 import OperatorSection from "@/components/sections/OperatorSection";
 import InsightSection from "@/components/sections/InsightSection";
 import OperatorGainsSection from "@/components/sections/OperatorGainsSection";
+import ResearchSection from "@/components/sections/ResearchSection";
 import ClosingSection from "@/components/sections/ClosingSection";
 
 export default function Home() {
@@ -22,7 +23,8 @@ export default function Home() {
         <OperatorSection />          {/* Screen 6 — Operator Platform */}
         <InsightSection />           {/* Screen 7 — Insight Layer */}
         <OperatorGainsSection />     {/* Screen 8 — What Operators Gain */}
-        <ClosingSection />           {/* Screen 9 — Closing CTA */}
+        <ResearchSection />          {/* Screen 9 — Research evidence / social proof */}
+        <ClosingSection />           {/* Screen 10 — Closing CTA */}
       </main>
     </>
   );
