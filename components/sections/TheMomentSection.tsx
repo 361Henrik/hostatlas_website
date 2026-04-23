@@ -69,7 +69,7 @@ export default function TheMomentSection() {
               lineHeight: 1.7,
             }}
           >
-            You&apos;re on deck. Something catches your eye — a ruined tower on
+            You&apos;re on deck. Something catches your eye - a ruined tower on
             a hillside, a cluster of boats in a cove, a stretch of cliff face
             that seems to hold something. And the question forms, almost
             involuntarily.
@@ -104,8 +104,8 @@ export default function TheMomentSection() {
           >
             Travel operators cover the highlights well. They have guides,
             shore excursions, port talks, and onboard programming. But the
-            journey between those highlights — the hours of sailing, the passing
-            landscapes, the unnamed villages and unexplained cliff faces — is
+            journey between those highlights - the hours of sailing, the passing
+            landscapes, the unnamed villages and unexplained cliff faces - is
             left to the guest to interpret alone.
           </p>
         </ScrollReveal>
@@ -170,7 +170,7 @@ export default function TheMomentSection() {
                 style={{
                   backgroundColor: "#F5F3EF",
                   border: "0.5px solid rgba(196,154,92,0.5)",
-                  borderRadius: "8px",
+                  borderRadius: "10px",
                   padding: "14px 16px",
                   fontFamily: "var(--font-playfair), serif",
                   fontStyle: "italic",

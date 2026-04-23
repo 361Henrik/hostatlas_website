@@ -61,7 +61,7 @@ export default function HeroSection() {
               color: "rgba(251,250,248,0.72)",
             }}
           >
-            The highlights are covered. The silent stretches aren&apos;t.
+            The highlights are covered. The silent stretches aren&apos;t. Curated narratives for the silent stretches
           </p>
 
           {/* Tagline — bronze brand mark */}
@@ -76,7 +76,6 @@ export default function HeroSection() {
               letterSpacing: "0.005em",
             }}
           >
-            Curated narratives for the silent stretches
           </p>
 
           {/* Bronze rule */}
