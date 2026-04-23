@@ -105,6 +105,20 @@ export default function HeroSection() {
           cruises, coastal voyages, and scenic journeys — quietly, without
           interruption, exactly when they want it.
         </p>
+        <p
+          className="mt-4"
+          style={{
+            fontFamily: "var(--font-inter), sans-serif",
+            fontWeight: 400,
+            fontSize: "16px",
+            lineHeight: 1.72,
+            color: "rgba(245,243,239,0.52)",
+            maxWidth: "42ch",
+          }}
+        >
+          For operators, it turns the hours between the highlights into a
+          branded, measurable part of the guest experience.
+        </p>
       </div>
 
       {/* ── Scroll indicator — bottom centre ─────────────────────── */}
