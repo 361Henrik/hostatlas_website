@@ -99,12 +99,28 @@ export default function TheExperienceSection() {
             </p>
           </ScrollReveal>
 
-          {/* ── AR mockup — landscape phone ──────────────────────── */}
+          {/* ── Demo video — landscape ───────────────────────────── */}
           <ScrollReveal delay={80} className="mt-12">
             <div
               className="w-full rounded-xl overflow-hidden relative"
               style={{ aspectRatio: "16/9", backgroundColor: "#1B3D2F" }}
             >
+              {/* Video background */}
+              <video
+                src="/video/hostatlas-demo.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+                aria-label="The Host Atlas demo — points of interest surfaced in real time as the vessel moves"
+              />
+              {/* Subtle overlay to ensure UI elements stay legible */}
+              <div
+                className="absolute inset-0"
+                style={{ backgroundColor: "rgba(27,61,47,0.35)" }}
+              />
+
               {/* Status bar */}
               <div
                 className="absolute top-0 left-0 right-0 flex items-center justify-between px-5 py-2.5"
@@ -122,19 +138,6 @@ export default function TheExperienceSection() {
                 </span>
                 <span style={{ fontSize: "10px", color: "rgba(255,255,255,0.5)" }}>● GPS</span>
               </div>
-
-              {/* Horizon line — simulated landscape */}
-              <div
-                className="absolute"
-                style={{
-                  top: "55%",
-                  left: 0,
-                  right: 0,
-                  height: "1px",
-                  backgroundColor: "rgba(196,154,92,0.12)",
-                  transform: "rotate(1.5deg)",
-                }}
-              />
 
               {/* POI cards */}
               <div className="absolute top-12 left-0 right-0 flex items-start justify-around px-6 pt-4 gap-3">

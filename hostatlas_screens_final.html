@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Host Atlas — Screen Reference · v2 · 9 Screens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --green:      #1B3D2F;
+    --white:      #FBFAF8;
+    --off-white:  #F5F3EF;
+    --text:       #1A1A2E;
+    --bronze:     #C49A5C;
+    --tint:       #F0EDE8;
+    --border:     rgba(27,61,47,0.13);
+    --muted:      #6B6B7B;
+    --bg-sec:     #F5F3EF;
+    --text-sec:   #4A4A5A;
+    --text-ter:   #8A8A9A;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); overflow-x: hidden; padding: 0 0 80px; }
+
+  .top-stripe { background: var(--green); color: var(--bronze); font-size: 13px; font-weight: 400; letter-spacing: .02em; text-align: center; padding: 10px 0; font-family: 'Playfair Display', serif; font-style: italic; }
+
+  .rules-panel { background: #FFF8ED; border-bottom: 0.5px solid rgba(196,154,92,0.3); padding: 20px 48px 18px; }
+  .rules-title { font-size: 10px; font-weight: 600; color: var(--bronze); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 14px; }
+  .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 40px; max-width: 760px; }
+  .rule { font-size: 12px; color: var(--text-sec); line-height: 1.65; }
+  .rule strong { color: var(--text); font-weight: 600; }
+  .rule em { font-style: italic; color: var(--green); }
+  .never { display: block; color: #9B3A2A; font-size: 11px; margin-top: 2px; }
+
+  .imagery-panel { background: #EEF4EC; border-bottom: 0.5px solid rgba(27,61,47,0.15); padding: 20px 48px 18px; }
+  .imagery-title { font-size: 10px; font-weight: 600; color: var(--green); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 14px; }
+  .imagery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .imagery-card { background: white; border: 0.5px solid rgba(27,61,47,0.15); border-radius: 7px; padding: 12px 14px; font-size: 12px; color: var(--text-sec); line-height: 1.6; }
+  .imagery-card strong { display: block; font-size: 11px; font-weight: 600; color: var(--green); margin-bottom: 4px; }
+  .imagery-note { font-size: 12px; color: var(--text-sec); line-height: 1.7; max-width: 720px; margin-bottom: 10px; }
+  .imagery-note strong { color: var(--text); font-weight: 600; }
+  .imagery-note code { background: rgba(27,61,47,0.08); padding: 1px 5px; border-radius: 3px; font-size: 11px; }
+
+  .wallpaper-panel { background: var(--tint); border-bottom: 0.5px solid rgba(27,61,47,0.12); padding: 14px 48px; font-size: 12px; color: var(--text-sec); line-height: 1.7; }
+  .wallpaper-panel strong { color: var(--green); font-weight: 600; }
+
+  .masthead { padding: 36px 48px 28px; border-bottom: 0.5px solid var(--border); display: flex; align-items: baseline; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 500; color: var(--green); }
+  .masthead-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .masthead-tag { font-size: 11px; color: var(--bronze); letter-spacing: .05em; text-transform: uppercase; font-weight: 500; }
+
+  .screens { max-width: 840px; margin: 36px auto 0; padding: 0 32px; display: flex; flex-direction: column; gap: 20px; }
+  .s { border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--white); }
+  .s-head { display: flex; align-items: center; gap: 12px; padding: 12px 20px; border-bottom: 0.5px solid var(--border); background: var(--bg-sec); flex-wrap: wrap; }
+  .s-num { font-size: 10px; font-weight: 500; background: var(--green); color: var(--off-white); border-radius: 99px; padding: 2px 10px; letter-spacing: .05em; text-transform: uppercase; flex-shrink: 0; }
+  .s-title { font-size: 14px; font-weight: 500; color: var(--text); }
+  .s-layout { font-size: 11px; color: var(--text-ter); margin-left: auto; }
+  .s-body { padding: 20px 20px 24px; display: flex; flex-direction: column; gap: 16px; }
+
+  .row { display: flex; flex-direction: column; gap: 5px; }
+  .lbl { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--text-ter); }
+  .copy { font-size: 13px; line-height: 1.7; color: var(--text); }
+  .copy + .copy { margin-top: 8px; }
+  .copy-serif { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 500; line-height: 1.4; color: var(--text); }
+  .copy-serif-i { font-family: 'Playfair Display', serif; font-size: 14px; font-style: italic; color: var(--text-sec); line-height: 1.55; }
+  .overline { font-size: 10px; font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--green); }
+
+  .positioning-line { font-family: 'Playfair Display', serif; font-size: 16px; font-style: italic; color: var(--green); border-left: 2px solid var(--bronze); padding: 8px 0 8px 16px; line-height: 1.5; }
+
+  .vb-spec { background: #F0EDE8; border: 0.5px solid rgba(196,154,92,0.35); border-radius: 7px; padding: 14px 16px; font-size: 12px; color: var(--text-sec); line-height: 1.65; }
+  .vb-spec strong { color: var(--green); font-weight: 600; display: block; margin-bottom: 5px; }
+
+  .vb-mock-wrap { position: relative; display: inline-block; margin: 6px 0 20px; }
+  .vb-mock { background: var(--off-white); border: 0.5px solid rgba(196,154,92,0.5); border-radius: 6px; padding: 10px 14px; font-family: 'Playfair Display', serif; font-style: italic; font-size: 13.5px; color: var(--text); line-height: 1.5; max-width: 340px; position: relative; }
+  .vb-line { width: 1px; height: 16px; background: linear-gradient(var(--bronze), rgba(196,154,92,0)); margin-left: 28px; }
+  .vb-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--bronze); margin-left: 26px; }
+  .vb-attr { font-size: 11px; color: var(--text-ter); margin-top: 4px; font-style: normal; }
+
+  .vb { border-left: 2px solid var(--border); padding: 5px 0 5px 12px; font-size: 13px; font-style: italic; color: var(--text-sec); line-height: 1.55; }
+  .vb + .vb { margin-top: 4px; }
+  .vb-b { border-left-color: var(--bronze); }
+  .vb-g { border-left-color: var(--green); }
+
+  .pull { border-left: 2px solid var(--green); padding: 6px 0 6px 16px; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--text); line-height: 1.5; }
+  .centred-q { text-align: center; font-family: 'Playfair Display', serif; font-size: 15px; font-style: italic; color: var(--green); line-height: 1.5; }
+
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .card { background: var(--bg-sec); border-radius: 7px; padding: 12px 14px; font-size: 12.5px; color: var(--text-sec); line-height: 1.6; }
+  .card strong { display: block; font-size: 11px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+  .card-lbl { font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; color: var(--bronze); margin-bottom: 4px; }
+
+  .img-slot { background: #E8F0E6; border: 0.5px solid rgba(27,61,47,0.2); border-radius: 7px; padding: 11px 14px; font-size: 12px; color: var(--text-sec); line-height: 1.65; }
+  .slot-name { display: inline-block; background: var(--green); color: var(--off-white); font-size: 10px; font-weight: 500; letter-spacing: .05em; text-transform: uppercase; padding: 2px 8px; border-radius: 3px; margin-bottom: 7px; font-family: monospace; }
+  .img-slot strong { color: var(--green); font-weight: 600; }
+
+  .signal-card { background: rgba(255,255,255,0.07); border: 0.5px solid rgba(196,154,92,0.25); border-radius: 8px; padding: 16px 18px; }
+  .signal-label { font-size: 10px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--bronze); margin-bottom: 8px; }
+  .signal-finding { font-family: 'Playfair Display', serif; font-style: italic; font-size: 14px; line-height: 1.5; color: var(--off-white); margin-bottom: 8px; }
+  .signal-rec { font-size: 12px; color: rgba(245,243,239,0.65); line-height: 1.55; }
+  .signal-rec strong { color: var(--bronze); font-weight: 500; }
+
+  .seasonal-panel { background: var(--green); border-radius: 8px; padding: 20px; }
+  .seasonal-panel .card { background: rgba(255,255,255,0.08); border: 0.5px solid rgba(196,154,92,0.3); color: rgba(245,243,239,0.8); }
+  .seasonal-panel .card strong { color: var(--bronze); }
+
+  .step-row { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text-sec); line-height: 1.6; }
+  .step-row + .step-row { margin-top: 7px; }
+  .step-n { width: 24px; height: 24px; border-radius: 50%; border: 1.5px solid var(--green); display: flex; align-items: center; justify-content: center; font-size: 11px; color: var(--green); font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+
+  .cta { display: inline-block; background: var(--green); color: var(--off-white); font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; padding: 9px 22px; border-radius: 4px; }
+  .cta-bronze { background: var(--bronze); color: var(--green); }
+
+  .split-preview { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; border-radius: 7px; overflow: hidden; border: 0.5px solid var(--border); margin: 4px 0; }
+  .split-left { background: #8a9e96; min-height: 90px; display: flex; align-items: flex-end; padding: 10px 12px; }
+  .split-right { background: #4a7060; min-height: 90px; display: flex; align-items: flex-end; padding: 10px 12px; position: relative; }
+  .split-label { font-size: 10px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: rgba(255,255,255,0.75); background: rgba(0,0,0,0.28); padding: 3px 7px; border-radius: 3px; }
+  .poi-mock { position: absolute; top: 12px; right: 12px; background: rgba(27,61,47,0.92); border: 0.5px solid var(--bronze); border-radius: 5px; padding: 5px 9px; }
+  .poi-cat { font-size: 8px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--bronze); }
+  .poi-title { font-size: 10px; color: var(--off-white); margin-top: 2px; white-space: nowrap; }
+
+  .convo-note { background: #F0EBF8; border: 0.5px solid rgba(100,60,180,0.18); border-radius: 7px; padding: 12px 15px; font-size: 12px; color: #4A3060; line-height: 1.65; font-style: italic; }
+  .convo-note strong { color: #3A2050; font-style: normal; font-weight: 600; }
+
+  .divider { height: 0.5px; background: var(--border); margin: 4px 0; }
+
+  @media (max-width: 640px) {
+    .screens, .rules-panel, .imagery-panel, .wallpaper-panel, .masthead { padding-left: 16px; padding-right: 16px; }
+    .rules-grid, .imagery-grid, .g2, .g3 { grid-template-columns: 1fr; }
+    .s-layout { display: none; }
+    .split-preview { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-stripe">The Host Atlas &nbsp;·&nbsp; Curated narratives for the silent stretches &nbsp;·&nbsp; hostatlas.guide</div>
+
+<!-- GLOBAL RULES -->
+<div class="rules-panel">
+  <div class="rules-title">Global Rules — Applied to Every Screen, Every Element</div>
+  <div class="rules-grid">
+    <div class="rule">
+      <strong>1. Product name</strong> — Always: <em>The Host Atlas</em>. Everywhere without exception: nav, hero, headings, body copy, captions, footer, metadata, image alt text.
+      <span class="never">Never: HostAtlas · Host Atlas · TheHostAtlas</span>
+    </div>
+    <div class="rule">
+      <strong>2. Tagline</strong> — Always: <em>Curated narratives for the silent stretches</em>. Sentence case. Playfair italic. A brand line, not a label. Prominent in hero, echoed near closing CTA.
+      <span class="never">Never all-caps. Never tiny. Never decorative-only.</span>
+    </div>
+    <div class="rule">
+      <strong>3. Primary CTA</strong> — Always: <em>Get in touch</em>. Secondary options may reference Calendly or direct email below the primary.
+      <span class="never">Never: "Request a conversation" · "Request a call" · "Book a meeting"</span>
+    </div>
+    <div class="rule">
+      <strong>4. Tone</strong> — High-trust. Considered. Invitation-only. Premium and calm. Every word earns its place.
+      <span class="never">Never startup-hype. Never feature-brochure. Never eager.</span>
+    </div>
+    <div class="rule" style="grid-column:1/-1">
+      <strong>5. Single conversion goal</strong> — Every screen supports one outcome: a meeting with a selected operator. No secondary funnels. No distractions. One door.
+    </div>
+    <div class="rule" style="grid-column:1/-1">
+      <strong>6. Cruise types</strong> — Named once, in Screen 1 hero body: <em>"Built for river, coastal, and expedition cruise operators."</em> Never repeated as a list again. Imagery carries the breadth.
+    </div>
+    <div class="rule" style="grid-column:1/-1">
+      <strong>7. Positioning line — LOCKED WORDING</strong> — Appears in Screen 2 and Screen 6, identical both times:
+      <em>"Guides bring the highlights to life. The Host Atlas curates the silent stretches."</em>
+      Never paraphrased. Never split across lines differently. Always together.
+    </div>
+  </div>
+</div>
+
+<!-- IMAGERY BRIEF -->
+<div class="imagery-panel">
+  <div class="imagery-title">Imagery Brief — Philosophy, Per-Screen Slots, and File Naming for Claude Code</div>
+
+  <div class="imagery-note">
+    <strong>Core principle:</strong> Images must show the gap, not the scenery. Every cruise line already publishes beautiful landscape photography. The Host Atlas images show a human in the frame, facing away or looking out, and a landscape beyond them that has no label, no famous landmark, no caption. The image performs the silent stretch — it doesn't illustrate it. Deck-level, human-scale, unnamed world beyond. No drones. No postcard angles. No famous geography.
+  </div>
+
+  <div class="imagery-grid">
+    <div class="imagery-card">
+      <strong>River cruise</strong>
+      Sundeck, afternoon. One figure at the railing from behind. Vine-covered hills or unnamed valley beyond. Slightly underexposed — overcast or soft afternoon light preferred. No castle. No famous gorge. The ordinary stretch between the headline moments.
+    </div>
+    <div class="imagery-card">
+      <strong>Coastal cruise</strong>
+      Balcony or deck rail, early morning or dusk. Cliffs or coastline sliding by. Coffee cup on the rail optional. Phone face-down on a table. The coast has no caption. No port. No landmark. Just rock and water and silence.
+    </div>
+    <div class="imagery-card">
+      <strong>Expedition cruise</strong>
+      Zodiac at mid-distance crossing still dark water toward an unnamed shore — OR — a figure at a ship bow, expedition jacket, approaching something the viewer cannot identify. The approach matters more than the destination.
+    </div>
+  </div>
+
+  <div class="imagery-note">
+    <strong>Verbatim callout treatment:</strong> Verbatims appear as floating callout boxes over landscape images — not as text blocks between paragraphs. Each box: warm off-white background, 0.5px bronze border, Playfair italic inside. Below the box: a thin bronze vertical line descending to a small bronze dot anchored to a feature in the landscape (a hillside, a ruin, a vineyard slope). The verbatim appears to comment on the unnamed thing the guest is looking at. Think margin note in a beautifully printed book — not a speech bubble.
+  </div>
+
+  <div class="imagery-note">
+    <strong>File naming for Claude Code:</strong> Name local image files exactly as the slot names shown in green tags in each screen below. Place all files in <code>_active/hostatlas/public/images/</code>. Claude Code will import by these exact names. Four image slots total: <code>hero-01.jpg</code> · <code>screen2-deck-river.jpg</code> · <code>screen4-fjord-cliffs.jpg</code> · <code>screen9-evening-water.jpg</code>. One supporting mockup: <code>screen6-phone-operator.jpg</code>.
+  </div>
+</div>
+
+<!-- WALLPAPER SPLIT CONCEPT -->
+<div class="wallpaper-panel">
+  <strong>The Wallpaper Split — Screen 2 layout concept:</strong> One element within Screen 2 shows the same landscape twice, side by side. Left panel: the landscape as scenery — slightly desaturated, no overlay text. Caption: <em>"Without context, scenery becomes wallpaper."</em> Right panel: same image at full colour with one Host Atlas POI card positioned over a landscape feature. Caption: <em>"The same stretch. Now it has a story."</em> Static CSS layout — two panels, same background image (screen2-deck-river.jpg), right panel adds a POI card via absolute positioning. No animation required.
+</div>
+
+<!-- MASTHEAD -->
+<div class="masthead">
+  <div>
+    <div class="masthead-title">The Host Atlas — Screen Reference v2</div>
+    <div class="masthead-sub">New 9-screen flow · All global rules applied · Image slots named · Data layer included · Ready for Claude Code</div>
+  </div>
+  <div class="masthead-tag">hostatlas.guide v1</div>
+</div>
+
+<div class="screens">
+
+  <!-- S1 HERO -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 1</span>
+      <span class="s-title">Hero — Arrival</span>
+      <span class="s-layout">Full viewport · full-bleed image · overlay rgba(0,0,0,0.42) · content centred max-width 680px</span>
+    </div>
+    <div class="s-body">
+      <div class="img-slot">
+        <div class="slot-name">hero-01.jpg</div>
+        <strong>River — silent stretch, river perspective.</strong> Shot from deck level or just above waterline. A winding river ahead, unnamed green hills or valley walls either side. No famous landmark. No castle. The in-between, not the highlight. Soft afternoon or overcast light. Overlay rgba(0,0,0,0.42) applied in CSS.
+      </div>
+      <div class="row">
+        <div class="lbl">Nav — fixed · transparent at top · white bg on scroll · no hamburger mobile</div>
+        <div class="copy">Left: <strong>The Host Atlas</strong> — Playfair Display 18px, Deep Green. Below name (desktop): <em style="font-family:'Playfair Display',serif;font-size:12px;color:var(--bronze)">Curated narratives for the silent stretches</em> — Playfair italic 11px, bronze 45% opacity. Right: <span class="cta" style="font-size:12px;padding:6px 16px">Get in touch</span></div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair Display 500 · 56px desktop / 36px mobile · white</div>
+        <div class="copy-serif" style="font-size:22px">"What's that over there?"</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Second line — Playfair italic · 24px / 18px mobile · white 80%</div>
+        <div class="copy-serif-i" style="font-size:16px">The highlights are covered. The silent stretches aren't.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Tagline — Playfair italic · 18px · Bronze · brand line · between headline lines or directly beneath product name</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--bronze)">Curated narratives for the silent stretches</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — Inter 400 · 18px · white 85% · max-width 520px</div>
+        <div class="copy">The Host Atlas gives river, coastal, and expedition cruise operators a contextual experience layer for the journey between the highlights — turning what guests observe into something they understand.</div>
+        <div class="copy" style="font-size:11px;color:var(--text-ter)">"river, coastal, and expedition cruise operators" — named once here only. Imagery carries the three contexts from here forward.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">CTA — Deep Green bg · Off-White text · Inter 500 · 48px height · border-radius 4px</div>
+        <div><span class="cta">Get in touch</span></div>
+      </div>
+      <div class="row">
+        <div class="lbl">Scroll indicator — subtle animated chevron · bottom centre · white 45% · CSS-only · respects prefers-reduced-motion</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2 THE PROBLEM -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 2</span>
+      <span class="s-title">The Problem — The Silent Stretches</span>
+      <span class="s-layout">White panel · verbatim callouts over landscape image · wallpaper split element · max-width 1100px</span>
+    </div>
+    <div class="s-body">
+      <div class="img-slot">
+        <div class="slot-name">screen2-deck-river.jpg</div>
+        <strong>River — figure at railing.</strong> Single person from behind at a ship railing, looking at passing landscape. Beyond: unnamed hills, a vineyard slope, a village barely visible. World dominant, human small. Slightly soft background focus. This image is used (1) full-width behind the verbatim callout section and (2) as the source image for the wallpaper split element.
+      </div>
+      <div class="row">
+        <div class="lbl">Overline</div>
+        <div class="overline">THE SILENT STRETCHES</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile</div>
+        <div class="copy-serif">Every journey carries the same question.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Setup — Inter 18px</div>
+        <div class="copy">You're on deck. Something catches your eye — a ruined tower on a hillside, a cluster of boats in a cove, a stretch of cliff face that seems to hold something. And the question forms, almost involuntarily.</div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Verbatim callout section — see treatment spec below</div>
+        <div class="vb-spec">
+          <strong>Verbatim callout treatment — read before building this section</strong>
+          Three callout boxes float over the screen2-deck-river.jpg image (full-width, ~60vh height, object-cover). Each box: background #F5F3EF, border 0.5px rgba(196,154,92,0.5), border-radius 8px, padding 14px 16px, Playfair italic 15px, max-width 260px, position absolute. Below each box: a vertical line (1px, bronze, 18px tall) descending to a bronze dot (5px diameter) — anchored visually to a feature in the landscape. Box 1 left-third, Box 2 centre, Box 3 right-third. Attribution: Inter 11px muted, below each dot. The image sits behind all three boxes. The overall effect: the landscape is full of questions that nobody is answering.
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Verbatim 1 — what the eye sees · anchors to a hillside or ruin</div>
+        <div class="vb-mock">"What's that over there?"</div>
+        <div class="vb-line"></div><div class="vb-dot"></div>
+        <div class="vb-attr">Rhine Gorge · Day 3 · afternoon sailing</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Verbatim 2 — curiosity reaching further · anchors to a vineyard slope</div>
+        <div class="vb-mock">"Are those vines? Whose are they? What do they make?"</div>
+        <div class="vb-line"></div><div class="vb-dot"></div>
+        <div class="vb-attr">Douro Valley · morning transit</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Verbatim 3 — the guide has moved on · anchors to open water or anonymous horizon</div>
+        <div class="vb-mock">"The guide finished an hour ago. We've been sailing since."</div>
+        <div class="vb-line"></div><div class="vb-dot"></div>
+        <div class="vb-attr">Norwegian coast · Hurtigruten sailing</div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Naming moment — Playfair italic · Deep Green · 20px · centred · generous vertical spacing</div>
+        <div class="copy-serif-i" style="color:var(--green);font-size:16px;text-align:center">These are the silent stretches.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Problem statement — three paragraphs · build the commercial case</div>
+        <div class="copy">Travel operators cover the highlights well. Guides bring the expected moments to life for the whole group — the famous landmarks, the signature ports, the views people came to see. That part is handled with care and knowledge.</div>
+        <div class="copy">What no one has designed for is everything between. The long transit between cities. The coast sliding by at dusk. The river valley that holds five centuries of history with not a word of explanation. 60 to 80 percent of many journeys passes in scenic silence.</div>
+        <div class="copy">Guests are still curious during these stretches. They want to understand what they are seeing. Without context, scenery becomes wallpaper. Attention fades. The question forms — and finds no answer. When information does exist, it often arrives too late. By the time an announcement is made, the moment has passed — the castle has slipped behind the bend.</div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Wallpaper split — static layout element · same image · two CSS panels</div>
+        <div class="split-preview">
+          <div class="split-left"><span class="split-label">Without The Host Atlas</span></div>
+          <div class="split-right">
+            <div class="poi-mock"><div class="poi-cat">History</div><div class="poi-title">Burg Sooneck · c. 1170</div></div>
+            <span class="split-label">With The Host Atlas</span>
+          </div>
+        </div>
+        <div class="copy" style="font-size:11px;color:var(--text-ter);margin-top:6px">Left caption below panel: "Without context, scenery becomes wallpaper." Right caption: "The same stretch. Now it has a story." Both captions in Inter 12px muted. Left panel slightly desaturated (CSS filter: saturate(0.4)). Right panel full colour. Same background-image source: screen2-deck-river.jpg.</div>
+      </div>
+
+      <!-- RESEARCH FINDINGS BLOCK -->
+      <div class="row">
+        <div class="lbl">Research findings block — Deep Green full-width panel · 3 findings · after wallpaper split · before positioning line</div>
+        <div style="background:var(--green);border-radius:10px;padding:56px 40px;margin:8px 0">
+          <div style="text-align:center;margin-bottom:8px">
+            <span style="font-size:10px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--bronze);font-family:Inter,sans-serif">FROM THE RESEARCH</span>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:48px;max-width:640px;margin:32px auto 0">
+
+            <!-- Finding 1 -->
+            <div style="text-align:center">
+              <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--off-white);margin-bottom:10px;line-height:1.4">"60–80% of the journey unfolds without guided context."</div>
+              <div style="font-size:13px;color:rgba(245,243,239,0.65);font-family:Inter,sans-serif;line-height:1.65;margin-bottom:16px;max-width:480px;margin-left:auto;margin-right:auto">Most commentary is triggered at major landmarks. The quiet time between castles, villages, and scenic points often passes in silence.</div>
+              <div style="width:1px;height:12px;background:var(--bronze);margin:0 auto 10px"></div>
+              <div style="background:var(--off-white);border:0.5px solid rgba(196,154,92,0.5);border-radius:8px;padding:14px 18px;display:inline-block;max-width:500px">
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--text);line-height:1.5">"The journey was fine… but was expecting a narrated tour, but that did not occur."</div>
+              </div>
+            </div>
+
+            <!-- Finding 4 -->
+            <div style="text-align:center">
+              <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--off-white);margin-bottom:10px;line-height:1.4">"Curiosity is constant. Answers are often missing."</div>
+              <div style="font-size:13px;color:rgba(245,243,239,0.65);font-family:Inter,sans-serif;line-height:1.65;margin-bottom:16px;max-width:480px;margin-left:auto;margin-right:auto">Guests try to identify what they see in real time — Googling from the deck, taking repeated photos, asking each other what they just passed.</div>
+              <div style="width:1px;height:12px;background:var(--bronze);margin:0 auto 10px"></div>
+              <div style="background:var(--off-white);border:0.5px solid rgba(196,154,92,0.5);border-radius:8px;padding:14px 18px;display:inline-block;max-width:500px">
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--text);line-height:1.5">"Staff didn't know the landmarks… asked about the mountain… they didn't know."</div>
+              </div>
+            </div>
+
+            <!-- Finding 6 -->
+            <div style="text-align:center">
+              <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--off-white);margin-bottom:10px;line-height:1.4">"The journey itself often has no narrator."</div>
+              <div style="font-size:13px;color:rgba(245,243,239,0.65);font-family:Inter,sans-serif;line-height:1.65;margin-bottom:16px;max-width:480px;margin-left:auto;margin-right:auto">Guides cover landmarks. Excursions cover destinations. Port talks cover what comes next. But the journey in between is often left unexplained.</div>
+              <div style="width:1px;height:12px;background:var(--bronze);margin:0 auto 10px"></div>
+              <div style="background:var(--off-white);border:0.5px solid rgba(196,154,92,0.5);border-radius:8px;padding:14px 18px;display:inline-block;max-width:500px">
+                <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--text);line-height:1.5">"The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing."</div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Source attribution -->
+          <div style="text-align:center;margin-top:48px;font-size:11px;color:rgba(245,243,239,0.35);font-family:Inter,sans-serif;line-height:1.6">Research drawn from Cruise Critic, TripAdvisor, River Cruise Advisor,<br>Rick Steves Travel Forum, Viator, and independent travel blogs.</div>
+        </div>
+      </div>
+
+      <!-- CLOSING LINE -->
+      <div class="row">
+        <div class="lbl">Closing line — Playfair italic · 28px · Deep Green · centred · standalone typographic moment · before positioning line</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:var(--green);text-align:center;padding:40px 0;line-height:1.4">"Extraordinary landscapes, quietly unexplained."</div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Positioning line — LOCKED WORDING · Playfair italic · bronze border-left · appears here and Screen 6</div>
+        <div class="positioning-line">Guides bring the highlights to life. The Host Atlas curates the silent stretches.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3 THE EXPERIENCE -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 3</span>
+      <span class="s-title">The Guest Experience — What This Actually Is</span>
+      <span class="s-layout">White top · tinted lower half · short · visual · product reveal before philosophy</span>
+    </div>
+    <div class="s-body">
+      <div class="convo-note">
+        <strong>Design intent:</strong> This screen answers "what actually is this?" before the site becomes conceptual. Short body. Visual steps. AR phone mockup. The product speaks before the philosophy. No lengthy explanation here — that comes in Screens 4 and 5.
+      </div>
+      <div class="row">
+        <div class="lbl">Overline</div>
+        <div class="overline">THE EXPERIENCE</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile</div>
+        <div class="copy-serif">What if the answer were already there?</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Intro — Inter 18px · one paragraph · confident · not technical</div>
+        <div class="copy">The Host Atlas introduces a layer of context — shaped by place, and revealed only when the guest reaches for it. There is no app to download. No account to create. No announcement to listen out for.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Film slot — full-width · 16:9 · Deep Green placeholder · bronze play icon 64px centred</div>
+        <div class="copy" style="font-size:12px;color:var(--text-ter)">Placeholder caption: "Film coming soon — This is what a guest sees." When real film exists: autoplay muted looping, 60–90 seconds. This film is the most important asset on the site. Everything else is copy. The film is proof.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Three steps — numbered · Inter · plain language · tinted lower panel</div>
+        <div class="step-row"><div class="step-n">1</div><div><strong>Scan.</strong> A QR code in the cabin, on a welcome card, or in a message from the operator.</div></div>
+        <div class="step-row"><div class="step-n">2</div><div><strong>Explore.</strong> Stories and context surface as the vessel moves through the route. Personal. Quiet. In their own language.</div></div>
+        <div class="step-row"><div class="step-n">3</div><div><strong>Pocket the phone.</strong> Audio continues in the background. Eyes back on the landscape.</div></div>
+      </div>
+      <div class="row">
+        <div class="lbl">Opt-in framing — Inter 16px · muted · important tone: personal and quiet, not broadcast</div>
+        <div class="copy">It is personal and quiet: the guest chooses when to look, and what to explore. Nothing is broadcast. Nothing interrupts. The landscape stays primary. Content saves to the device before departure — poor signal in a fjord or remote valley is never an issue.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">AR phone mockup — landscape mode · centred · max-width 580px · 3 POI cards · mini-map · status bar</div>
+        <div style="max-width:480px;margin:8px auto 0;position:relative">
+          <div style="border:6px solid #1A1A2E;border-radius:22px;overflow:hidden;aspect-ratio:16/9;position:relative;background:#0d1f18">
+            <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a3828 0%,#0d2018 50%,#1a3020 100%)"></div>
+            <div style="position:absolute;inset:0">
+              <div style="position:absolute;left:0;right:0;top:37%;height:1px;background:rgba(196,154,92,0.2)"></div>
+              <div style="position:absolute;left:13%;top:20%;transform:translateX(-50%)">
+                <div style="background:rgba(27,61,47,0.92);border:0.5px solid #C49A5C;border-radius:5px;padding:5px 9px;white-space:nowrap">
+                  <div style="font-size:8px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#C49A5C;font-family:Inter,sans-serif">History</div>
+                  <div style="font-size:10px;color:#F5F3EF;font-family:Inter,sans-serif;margin-top:1px">Medieval fortification</div>
+                  <div style="font-size:8px;color:rgba(245,243,239,0.55);font-family:Inter,sans-serif">c. 1280 · 340m ahead</div>
+                </div>
+                <div style="width:1px;height:16px;background:linear-gradient(#C49A5C,rgba(196,154,92,0));margin:0 auto"></div>
+                <div style="width:5px;height:5px;border-radius:50%;background:#C49A5C;margin:0 auto"></div>
+              </div>
+              <div style="position:absolute;right:14%;top:15%;transform:translateX(50%)">
+                <div style="background:rgba(27,61,47,0.92);border:0.5px solid #C49A5C;border-radius:5px;padding:5px 9px;white-space:nowrap">
+                  <div style="font-size:8px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#C49A5C;font-family:Inter,sans-serif">Local producers</div>
+                  <div style="font-size:10px;color:#F5F3EF;font-family:Inter,sans-serif;margin-top:1px">Weingut Becker estate</div>
+                  <div style="font-size:8px;color:rgba(245,243,239,0.55);font-family:Inter,sans-serif">Riesling · since 1847</div>
+                </div>
+                <div style="width:1px;height:16px;background:linear-gradient(#C49A5C,rgba(196,154,92,0));margin:0 auto"></div>
+                <div style="width:5px;height:5px;border-radius:50%;background:#C49A5C;margin:0 auto"></div>
+              </div>
+              <div style="position:absolute;left:50%;top:52%;transform:translateX(-50%)">
+                <div style="width:5px;height:5px;border-radius:50%;background:#C49A5C;margin:0 auto"></div>
+                <div style="width:1px;height:14px;background:linear-gradient(rgba(196,154,92,0),#C49A5C);margin:0 auto"></div>
+                <div style="background:rgba(27,61,47,0.92);border:0.5px solid #C49A5C;border-radius:5px;padding:5px 9px;white-space:nowrap">
+                  <div style="font-size:8px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#C49A5C;font-family:Inter,sans-serif">Geology</div>
+                  <div style="font-size:10px;color:#F5F3EF;font-family:Inter,sans-serif;margin-top:1px">Devonian slate formation</div>
+                  <div style="font-size:8px;color:rgba(245,243,239,0.55);font-family:Inter,sans-serif">380 million years old</div>
+                </div>
+              </div>
+              <div style="position:absolute;bottom:10px;left:10px;background:rgba(27,61,47,0.9);border:0.5px solid rgba(196,154,92,0.3);border-radius:5px;padding:5px 7px;display:flex;align-items:center;gap:5px">
+                <div style="width:30px;height:20px;background:rgba(196,154,92,0.08);border-radius:2px;position:relative">
+                  <div style="position:absolute;left:30%;top:45%;width:4px;height:4px;border-radius:50%;background:#C49A5C"></div>
+                  <div style="position:absolute;left:58%;top:55%;width:3px;height:3px;border-radius:50%;background:#C49A5C;opacity:.7"></div>
+                </div>
+                <div>
+                  <div style="font-size:7px;color:#C49A5C;font-weight:500;font-family:Inter,sans-serif;text-transform:uppercase;letter-spacing:.05em">Rhine Gorge</div>
+                  <div style="font-size:7px;color:rgba(245,243,239,0.5);font-family:Inter,sans-serif">3 nearby stories</div>
+                </div>
+              </div>
+              <div style="position:absolute;top:0;left:0;right:0;height:20px;background:linear-gradient(rgba(0,0,0,0.4),transparent);display:flex;align-items:center;padding:0 10px;justify-content:space-between">
+                <div style="font-size:7px;color:rgba(245,243,239,0.7);font-family:Inter,sans-serif;font-weight:500">The Host Atlas</div>
+                <div style="font-size:7px;color:rgba(245,243,239,0.45);font-family:Inter,sans-serif">Live · Rhine Valley</div>
+              </div>
+            </div>
+          </div>
+          <div style="position:absolute;right:-8px;top:28%;width:3px;height:24px;background:#1A1A2E;border-radius:0 3px 3px 0"></div>
+          <div style="position:absolute;left:-8px;top:22%;width:3px;height:18px;background:#1A1A2E;border-radius:3px 0 0 3px"></div>
+          <div style="position:absolute;left:-8px;top:37%;width:3px;height:18px;background:#1A1A2E;border-radius:3px 0 0 3px"></div>
+        </div>
+        <p style="font-size:12px;color:var(--muted);text-align:center;margin-top:10px">What the guest sees — points of interest surfaced in real time, as the vessel moves through the route.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- S4 THE TRANSFORMATION -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 4</span>
+      <span class="s-title">The Transformation — What The Host Atlas Does</span>
+      <span class="s-layout">Deep Green panel · full-bleed bg image · overlay rgba(27,61,47,0.87) · centred max-width 760px</span>
+    </div>
+    <div class="s-body">
+      <div class="img-slot">
+        <div class="slot-name">screen4-fjord-cliffs.jpg</div>
+        <strong>Coastal or expedition — unnamed cliffs or fjord walls.</strong> Deep, dramatic, completely anonymous. No famous landmark. No identifiable geography. Tall rock faces reflected in still water, OR a coastal cliff line with no village or port visible. This landscape is layered and unread — that is the point. Overlay rgba(27,61,47,0.87) in CSS.
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile · off-white</div>
+        <div class="copy-serif">What passes by is rarely explained.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — Inter 18px · off-white 82% · the transformation argument · keep tight</div>
+        <div class="copy">A hill is just a hill until it has a story. A bridge is just a bridge. A ruin on a slope is just a ruin. Without interpretation, the guest's eye moves across the landscape without landing anywhere. The scenery accumulates — and eventually becomes background.</div>
+        <div class="copy">The Host Atlas adds the interpretive layer that makes the landscape legible. History. Folklore. Geology. Local life. The people who have lived, worked, and made things in the places the vessel is passing through right now.</div>
+        <div class="copy">This is not narration for narration's sake. It is context that transforms what a guest sees into something they understand — and remember.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Four lens cards — 2×2 · rgba white 6% bg · bronze 0.5px border · text off-white 78%</div>
+        <div class="g2">
+          <div class="card" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(196,154,92,0.3)"><div class="card-lbl">History &amp; stories</div><span style="color:rgba(245,243,239,0.78);font-size:12.5px">The events, conflicts, and human narratives written into the landscape over centuries.</span></div>
+          <div class="card" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(196,154,92,0.3)"><div class="card-lbl">Geology &amp; nature</div><span style="color:rgba(245,243,239,0.78);font-size:12.5px">The forces that shaped the cliffs, valleys, and waterways the vessel is moving through.</span></div>
+          <div class="card" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(196,154,92,0.3)"><div class="card-lbl">Culture &amp; local life</div><span style="color:rgba(245,243,239,0.78);font-size:12.5px">The villages, traditions, and ways of living along the route — past and present.</span></div>
+          <div class="card" style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(196,154,92,0.3)"><div class="card-lbl">Local producers &amp; makers</div><span style="color:rgba(245,243,239,0.78);font-size:12.5px">The vineyards, workshops, and artisans whose story begins where the guest is standing.</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Closing — Playfair italic · off-white 70% · centred</div>
+        <div class="copy-serif-i" style="text-align:center">Applied to the same stretch of river, these lenses turn a silent hour into a rich one. The landscape doesn't change. What guests understand about it does.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S5 PERSONAL RELEVANCE -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 5</span>
+      <span class="s-title">Personal Relevance — Curated for Each Guest</span>
+      <span class="s-layout">White panel · two-column desktop · image left · content right</span>
+    </div>
+    <div class="s-body">
+      <div class="img-slot">
+        <div class="slot-name">screen5-deck-coastal.jpg</div>
+        <strong>Coastal — two or three figures on deck, separate, looking at the same unnamed coastline.</strong> Each person absorbed in their own observation — one at the rail, one sitting, one further back. Same landscape for all of them. The image suggests: same view, different inner experience. Early morning light preferred. No interaction between figures.
+      </div>
+      <div class="convo-note">
+        <strong>Individual curation — design and copy note:</strong> This is the most strategically important screen on the site. It closes the implicit objection every operator has: "can't my guide just do this?" The answer is not a criticism of guides — it is a structural fact. A guide speaks to the group. One voice, one story, one pace, for the whole deck, simultaneously, in one language. The Host Atlas speaks to each guest individually — in their language, at their pace, around their own curiosity. Two guests looking at the same valley may be following entirely different stories. That is not possible with a microphone and a group. It is the nature of a personal lens. The copy should make this feel generous toward guides — they own the highlights, and they are excellent at it. The Host Atlas works in the space the guide format cannot reach.
+      </div>
+      <div class="row">
+        <div class="lbl">Overline</div>
+        <div class="overline">FOR EACH GUEST</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile</div>
+        <div class="copy-serif">Not every guest is curious about the same thing.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — Inter 18px · the individual argument · concrete before abstract</div>
+        <div class="copy">Two guests stand at the same railing, looking at the same stretch of valley. One notices the rows of vines on the slope — who planted them, what variety, whose label ends up on the bottle. The other notices the earthworks on the hillside above — the outline of something older, something that predates the vineyard by eight centuries.</div>
+        <div class="copy">A guide with a microphone can tell one story to the group. The Host Atlas can tell both stories simultaneously — to different guests, in different languages, at different depths.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Four guest examples — 2×2 grid · concrete personas · not abstract types</div>
+        <div class="g2">
+          <div class="card"><strong>The history reader</strong>Following the conflict history of a valley they've been sailing through for two hours. The earthworks, the fortifications, the siege that ended a dynasty.</div>
+          <div class="card"><strong>The wine curious</strong>Tracing the vineyard estates visible from the deck — the families behind them, the terroir, the harvests that mattered.</div>
+          <div class="card"><strong>The geology watcher</strong>Reading the rock faces for what they reveal: which era, which force, which event shaped the cliff the vessel is passing right now.</div>
+          <div class="card"><strong>The local life follower</strong>Noticing the villages, the fishing boats, the small industries along the bank — what people here have always made their lives from.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Finding 3 — research verbatim · bronze border-left · after guest cards · before individual curation statement</div>
+        <div style="border-left:2px solid var(--bronze);padding:8px 0 8px 16px;max-width:580px;margin:4px 0">
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--green);margin-bottom:10px;line-height:1.5">"Guests are surrounded by stories — but much of the landscape remains unexplained."</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:var(--text-sec);line-height:1.55">"We would have liked more information about the buildings we could see on shore, and about the biology, ecology and history of the river itself."</div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Individual curation statement — Playfair italic · bronze border-left · the key differentiator line</div>
+        <div class="positioning-line">The same silent stretch can hold many different stories. The Host Atlas curates the right one for each guest — in their language, at their pace, around their own curiosity.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Supporting close — generously positions guides · closes the objection without naming it</div>
+        <div class="copy">This is not something a guide — however knowledgeable, however skilled — can do for every guest simultaneously. It is not a criticism. It is simply the nature of the format: one voice, one story, one group. The Host Atlas works in the space that format cannot reach.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S6 OPERATOR PLATFORM -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 6</span>
+      <span class="s-title">Operator Platform — Branded Deployment</span>
+      <span class="s-layout">White panel · two-column desktop · content left · phone mockup right</span>
+    </div>
+    <div class="s-body">
+      <div class="row">
+        <div class="lbl">Overline</div>
+        <div class="overline">YOUR PLATFORM</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile</div>
+        <div class="copy-serif">One platform. Your narrative, entirely.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — start with seasonal (concrete, evocative) · platform mechanics follow</div>
+        <div class="copy">The Host Atlas is not a generic content library dropped onto your route. Every deployment is built specifically for the operator — in their voice, around their themes, approved by their team before a single guest sees it. The platform is shared. The story, the tone, and the guest relationship are entirely yours.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Seasonal block — lead with this · Deep Green panel · concrete before abstract</div>
+        <div class="seasonal-panel">
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:8px">THE SEASONAL LAYER</div>
+          <div style="font-family:'Playfair Display',serif;font-size:16px;font-weight:500;color:var(--off-white);margin-bottom:8px">The route repeats. The seasons don't.</div>
+          <div style="font-size:12.5px;color:rgba(245,243,239,0.78);margin-bottom:14px">A sailing on the Rhine in April moves through a different landscape than the same route in October. Content layers seasonally — what the guest sees changes; what they're told about it should change too.</div>
+          <div class="g2">
+            <div class="card"><div class="card-lbl">April · Spring sailing</div>Cherry blossom on the slopes. Flooding history of the valley floor. The annual rhythm of the river keepers.</div>
+            <div class="card"><div class="card-lbl">October · Harvest sailing</div>Grape harvest in full view. The estate behind the vine rows. What this particular vintage is expected to produce.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Four pillars — 2×2 · after seasonal · platform mechanics kept brief</div>
+        <div class="g2">
+          <div class="card"><strong>You define the lens.</strong>Themes, tone, depth. You set the parameters — we build within them.</div>
+          <div class="card"><strong>Your brand, throughout.</strong>The guest experience carries your identity at every point of contact.</div>
+          <div class="card"><strong>We research and write.</strong>Content built for each route, verified, and approved before publication.</div>
+          <div class="card"><strong>It grows with the route.</strong>Seasonal layers, new corridors, signal-informed depth over time.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Positioning line — LOCKED WORDING · appears here and in Screen 2 · identical both times</div>
+        <div class="positioning-line">Guides bring the highlights to life. The Host Atlas curates the silent stretches.</div>
+      </div>
+      <div class="img-slot">
+        <div class="slot-name">screen6-phone-operator.jpg</div>
+        <strong>Right column (desktop) — operator-branded phone mockup.</strong> Portrait phone showing The Host Atlas PWA with fictional operator brand applied: Deep Green top bar, operator logo placeholder, route name visible. The guest experience carries the operator identity — not The Host Atlas brand. This makes the white-label nature of the platform immediately visual without explaining it in copy.
+      </div>
+    </div>
+  </div>
+
+  <!-- S7 INSIGHT LAYER -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 7</span>
+      <span class="s-title">The Insight Layer — What Operators Learn</span>
+      <span class="s-layout">Deep Green panel · centred max-width 900px · signal cards formatted as plain-language route advice</span>
+    </div>
+    <div class="s-body">
+      <div class="row">
+        <div class="lbl">Overline — bronze on Deep Green bg</div>
+        <div class="overline" style="color:var(--bronze)">THE INSIGHT LAYER</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Finding 5 — opens Screen 7 · before main headline · sets up why insight matters · Deep Green bg so use off-white callout box</div>
+        <div style="text-align:center;margin-bottom:8px">
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:rgba(245,243,239,0.82);line-height:1.4;margin-bottom:16px">"The experience is relaxing — and quietly frustrating."</div>
+          <div style="background:rgba(255,255,255,0.07);border:0.5px solid rgba(196,154,92,0.3);border-radius:8px;padding:14px 18px;display:inline-block;max-width:480px">
+            <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;color:rgba(245,243,239,0.85);line-height:1.5">"The scenery was beautiful, but long stretches of sailing could feel quiet, repetitive, and sometimes a little boring."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile · off-white</div>
+        <div class="copy-serif">Curiosity leaves a trace.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — Inter 18px · off-white 82% · advice framing, not analytics framing</div>
+        <div class="copy">Every time a guest reaches for their device — to explore a story, to linger on a particular stretch, to look for context that isn't there yet — that moment is recorded. Not what they found. What caught their attention.</div>
+        <div class="copy">Across sailings, patterns emerge. Certain stretches hold attention that the route hasn't named yet. Certain themes resonate far more deeply than others. Certain seasons change what guests are curious about. The Host Atlas surfaces all of this — before the next sailing, not after the next season.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Signal cards — 3 cards · formatted as plain-language route advice · NOT dashboards NOT graphs</div>
+        <div class="copy" style="font-size:11px;color:var(--text-ter);margin-bottom:8px">Each card reads like a Monday morning route brief — specific, actionable, human. Bronze label top. Playfair italic finding (what happened). Inter recommendation below (what to do). This is a sample of what the operator actually receives from the insight layer.</div>
+        <div class="g3" style="background:rgba(255,255,255,0.04);border-radius:8px;padding:12px;gap:12px">
+          <div class="signal-card">
+            <div class="signal-label">Route signal · Rhine · km 512</div>
+            <div class="signal-finding">"12 guests reached for context here on the last three sailings. No story exists yet."</div>
+            <div class="signal-rec">Feature drawing attention: remains of a medieval toll station, currently unnamed in the route. <strong>Recommended: one story, history lens, 3-minute audio — before the next sailing.</strong></div>
+          </div>
+          <div class="signal-card">
+            <div class="signal-label">Theme resonance · Douro · this season</div>
+            <div class="signal-finding">"Geology stories outperformed history stories by 2.3× dwell time."</div>
+            <div class="signal-rec">Guests staying significantly longer with schist terracing content than village histories. <strong>Recommended: expand geology lens on the upper Douro corridor before spring sailings.</strong></div>
+          </div>
+          <div class="signal-card">
+            <div class="signal-label">Seasonal drift · Moselle · October</div>
+            <div class="signal-finding">"October guests show 40% lower engagement with harvest content than September guests."</div>
+            <div class="signal-rec">They already know the harvest. They want the post-harvest story — what happens to the wine, where it goes. <strong>Recommended: a late-season layer before October sailings resume.</strong></div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Optional route line — thin SVG curve suggesting a river corridor · 3 bronze dots · no labels · cards sit beside dots</div>
+        <div class="copy" style="font-size:11px;color:var(--text-ter)">Static SVG. Suggests: these signals emerge from the journey itself. The route generates the intelligence. No animation required.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Pull quote — Playfair italic · off-white 70% · centred · closes the screen</div>
+        <div class="centred-q" style="color:rgba(245,243,239,0.7)">"When there's nothing there yet — that's the most interesting signal of all."</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S8 OPERATOR GAINS -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 8</span>
+      <span class="s-title">What Operators Gain — Business Value Summary</span>
+      <span class="s-layout">White panel · centred max-width 900px</span>
+    </div>
+    <div class="s-body">
+      <div class="row">
+        <div class="lbl">Overline</div>
+        <div class="overline">WHAT OPERATORS GAIN</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 40px / 28px mobile</div>
+        <div class="copy-serif">Turning scenic transit into a branded, measurable asset.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Six outcomes — 2×3 grid · Deep Green border-left 2px · border-radius right side only</div>
+        <div class="g2">
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>Stronger guest engagement</strong>Throughout the journey — not just at the headline moments.</div>
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>A distinctive guest experience</strong>The operator's identity, voice, and perspective across every mile.</div>
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>Post-trip relevance</strong>A personal journey record guests can revisit, share, and remember the trip through.</div>
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>Scalable across routes</strong>The same platform, adapted to every waterway and sailing in the portfolio.</div>
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>Real guest insight</strong>Data on what guests notice, explore, and engage with — before the next sailing.</div>
+          <div class="card" style="border-left:2px solid var(--green);border-radius:0 6px 6px 0"><strong>Content that compounds</strong>Seasonally layered, signal-informed, and richer with every voyage.</div>
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="row">
+        <div class="lbl">Local commerce — subordinate expansion layer · tinted panel · not the core promise</div>
+        <div style="background:var(--tint);border-radius:8px;padding:20px">
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--bronze);font-weight:500;margin-bottom:8px">AN EXPANSION LAYER</div>
+          <div class="copy-serif" style="margin-bottom:10px;font-size:14px">The route as a living commercial journey.</div>
+          <div class="copy" style="margin-bottom:8px">When a guest understands the story of a vineyard they've been sailing past for an hour — the family behind it, the history of the estate, the wine they make — the connection between that story and a purchase becomes natural and genuine. Context creates desire. Local producers become part of the journey.</div>
+          <div class="copy" style="font-size:12px;font-style:italic;color:var(--muted)">Available to operators who want it — present and ready for those exploring it.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lbl">Closing line — Playfair 22px · Deep Green · centred · the commercial summary</div>
+        <div class="copy-serif" style="text-align:center;color:var(--green)">The Host Atlas transforms the journey between the highlights into something defined, measurable, and lasting.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S9 CLOSING CTA -->
+  <div class="s">
+    <div class="s-head">
+      <span class="s-num">Screen 9</span>
+      <span class="s-title">Closing CTA — Selective Invitation</span>
+      <span class="s-layout">Full viewport · full-bleed image · overlay rgba(27,61,47,0.78) · content centred max-width 600px · all off-white</span>
+    </div>
+    <div class="s-body">
+      <div class="img-slot">
+        <div class="slot-name">screen9-evening-water.jpg</div>
+        <strong>River or coastal — evening passage · deck level.</strong> Calm water at dusk or golden hour. The vessel is moving — a slight wake or sense of forward motion. No port, no landmark, no destination visible. This is the end of a silent stretch, not the arrival at a highlight. Warm, quiet, unhurried. Overlay rgba(27,61,47,0.78) in CSS — content reads in off-white over it.
+      </div>
+      <div class="row">
+        <div class="lbl">Headline — Playfair 44px / 30px mobile · off-white</div>
+        <div class="copy-serif">Currently in conversation with a select number of operators.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Body — Inter 18px · off-white 80% · invitation-only tone · not sales · not eager</div>
+        <div class="copy">We are in conversation with a small number of river, coastal, and expedition cruise operators. If the premise is relevant to your routes and your guests, we would be glad to find some time.</div>
+        <div class="copy">There is no form. No funnel. Just a conversation with the people who built it.</div>
+      </div>
+      <div class="row">
+        <div class="lbl">What the meeting covers — 3 short lines · Inter 14px · off-white 60% · optional but useful</div>
+        <div class="copy" style="font-size:12.5px">See the prototype on a real route &nbsp;·&nbsp; Discuss what a deployment could look like for your itineraries &nbsp;·&nbsp; Walk through the insight layer with real sailing data</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Finding 6 verbatim — large · Playfair italic · off-white 85% · centred · no box · no attribution · sits above tagline echo · the final emotional beat before CTA</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:22px;color:rgba(245,243,239,0.85);text-align:center;line-height:1.5;padding:40px 0;max-width:560px;margin:0 auto">"The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing."</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Tagline echo — Playfair italic · Bronze · centred · prominent brand line repeat · above CTA</div>
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;color:var(--bronze);text-align:center;padding:8px 0">Curated narratives for the silent stretches</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Primary CTA — Bronze bg · Deep Green text · Inter 500 · 48px · centred · border-radius 4px</div>
+        <div style="text-align:center"><span class="cta cta-bronze" style="letter-spacing:.02em">Get in touch</span></div>
+      </div>
+      <div class="row">
+        <div class="lbl">Secondary contact — Inter 14px · off-white 55% · below primary · Calendly + email</div>
+        <div class="copy" style="font-size:12.5px;text-align:center">Schedule a call via Calendly &nbsp;·&nbsp; Or write directly: hello@hostatlas.guide</div>
+      </div>
+      <div class="row">
+        <div class="lbl">Footer — Inter 12px · off-white 35% · centred</div>
+        <div class="copy" style="font-size:12px;color:var(--muted);text-align:center">The Host Atlas · River, coastal, and expedition cruise operators · hostatlas.guide</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /screens -->
+</body>
+</html>

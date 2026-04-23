@@ -412,3 +412,125 @@ Update all of the following:
 
 *The Host Atlas · hostatlas.guide · Update plan v1 · April 2026*
 *Source of truth: hostatlas_screens_final.html and hostatlas_screens_annotations.md*
+
+---
+
+## PASS 6 — Research findings and verbatims
+
+These are real traveller verbatims drawn from Cruise Critic, TripAdvisor, River Cruise Advisor, Rick Steves Travel Forum, Viator, and independent travel blogs. They are documented evidence, not marketing copy. Treat them as such — they carry more weight than anything The Host Atlas says about itself.
+
+Execute Pass 6 after Pass 5. Do not merge these into existing body copy paragraphs. Each finding gets its own visual treatment as specified below.
+
+---
+
+### 6.1 Screen 2 — Three findings as a visual evidence block
+
+Add a new visual section inside Screen 2 (TheMomentSection or TheProblemsSection), positioned AFTER the verbatim callout image section and BEFORE the wallpaper split.
+
+**Visual treatment:**
+- Dark tinted background: `#1B3D2F` (Deep Green), full width, padding 80px 0
+- Three findings stacked vertically, centred, max-width 720px, gap 64px between each
+- Each finding:
+  - Stat/statement: Playfair Display italic, 22px, off-white `#F5F3EF`, margin-bottom 16px
+  - Verbatim below: floating callout box treatment — background `#F5F3EF`, border `0.5px solid rgba(196,154,92,0.5)`, border-radius 8px, padding 14px 18px, Playfair italic 15px, Near Black text, max-width 520px, centred
+  - Bronze thin line (1px, 12px tall) above each verbatim box connecting statement to quote
+  - No attribution names — source line appears once at the bottom of all three
+
+**Finding 1:**
+Statement: `"60–80% of the journey unfolds without guided context."`
+Body (Inter 16px, off-white 70%, max-width 560px, centred, margin-bottom 20px):
+Most commentary is triggered at major landmarks. The quiet time between castles, villages, and scenic points often passes in silence.
+Verbatim: `"The journey was fine… but was expecting a narrated tour, but that did not occur."`
+
+**Finding 4:**
+Statement: `"Curiosity is constant. Answers are often missing."`
+Body (same style):
+Guests try to identify what they see in real time — Googling from the deck, taking repeated photos, asking each other what they just passed.
+Verbatim: `"Staff didn't know the landmarks… asked about the mountain… they didn't know."`
+
+**Finding 6:**
+Statement: `"The journey itself often has no narrator."`
+Body (same style):
+Guides cover landmarks. Excursions cover destinations. Port talks cover what comes next. But the journey in between is often left unexplained.
+Verbatim: `"The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing."`
+
+**Source line — below all three findings:**
+Inter 11px, off-white 35%, centred, margin-top 48px:
+`Research drawn from Cruise Critic, TripAdvisor, River Cruise Advisor, Rick Steves Travel Forum, Viator, and independent travel blogs.`
+
+---
+
+### 6.2 Screen 5 — Finding 3 added to personal relevance section
+
+In PersonalRelevanceSection, add Finding 3 as a pull quote immediately after the four guest example cards and before the individual curation statement.
+
+**Treatment:**
+- Full-width, centred, max-width 600px
+- Bronze border-left 2px `#C49A5C`, padding-left 20px
+- Statement: Playfair italic 18px, Deep Green `#1B3D2F`
+- Verbatim below: same border-left treatment, Playfair italic 16px, Near Black
+
+Statement: `"Guests are surrounded by stories — but much of the landscape remains unexplained."`
+
+Verbatim: `"We would have liked more information about the buildings we could see on shore, and about the biology, ecology and history of the river itself."`
+
+No attribution. No source line here — it was already credited in Screen 2.
+
+---
+
+### 6.3 Screen 7 — Finding 5 opens the insight section
+
+In the InsightSection (Deep Green background), add Finding 5 as the opening statement BEFORE the headline "Curiosity leaves a trace."
+
+**Treatment:**
+- Playfair italic 20px, off-white 80%, centred, max-width 600px, margin-bottom 48px
+- Verbatim below in callout box: background `rgba(255,255,255,0.07)`, border `0.5px solid rgba(196,154,92,0.3)`, border-radius 8px, padding 14px 18px, Playfair italic 15px, off-white text, centred, max-width 500px
+
+Statement: `"The experience is relaxing — and quietly frustrating."`
+
+Verbatim: `"The scenery was beautiful, but long stretches of sailing could feel quiet, repetitive, and sometimes a little boring."`
+
+---
+
+### 6.4 Screen 9 — Closing verbatim above tagline echo
+
+In ClosingSection, add Finding 6's verbatim as a standalone typographic moment ABOVE the tagline echo and ABOVE the primary CTA.
+
+**Treatment:**
+- Playfair italic, 24px desktop / 18px mobile, off-white 85%, centred, max-width 560px
+- No box. No border. No attribution. Just the words, large, in the landscape.
+- Generous padding above and below: 48px
+
+Verbatim text:
+`"The scenery was extraordinary, but too often the journey passed without explanation, leaving us to wonder what we were seeing."`
+
+---
+
+### 6.5 Screen 2 — Closing line (locked)
+
+At the very end of Screen 2, after the wallpaper split and after the three findings block, add this single line as a standalone typographic moment:
+
+**Treatment:**
+- Playfair italic, 28px desktop / 20px mobile, Deep Green `#1B3D2F`, centred, max-width 600px, padding 80px 0
+- No border. No box. Just the line.
+
+Text: `"Extraordinary landscapes, quietly unexplained."`
+
+This is the closing statement of the problem. It sits immediately before the locked positioning line:
+`"Guides bring the highlights to life. The Host Atlas curates the silent stretches."`
+
+---
+
+### 6.6 Verification — Pass 6
+
+After completing Pass 6, confirm:
+- [ ] Three findings block present in Screen 2 on Deep Green background
+- [ ] Each finding has statement + body + verbatim callout box
+- [ ] Source attribution line present below the three findings
+- [ ] Finding 3 verbatim present in Screen 5 after guest example cards
+- [ ] Finding 5 present in Screen 7 before main headline
+- [ ] Finding 6 verbatim present in Screen 9 above tagline echo, large, no box
+- [ ] Closing line "Extraordinary landscapes, quietly unexplained." present at end of Screen 2
+- [ ] No finding appears more than once across the site
+- [ ] No verbatim is attributed by name — source line in Screen 2 covers all
+

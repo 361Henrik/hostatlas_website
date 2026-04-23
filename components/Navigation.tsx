@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 export default function Navigation() {
@@ -32,15 +33,42 @@ export default function Navigation() {
       ].join(" ")}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex flex-col">
-          <span className="font-display text-lg text-deep-green">The Host Atlas</span>
-          <span className="hidden md:block font-body italic text-[11px] text-accent/45">
+        <div className="flex flex-col gap-0.5">
+          <Image
+            src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
+            alt="The Host Atlas"
+            width={140}
+            height={28}
+            priority
+            className="h-7 w-auto"
+          />
+          <span
+            className="hidden md:block"
+            style={{
+              fontFamily: "var(--font-playfair), serif",
+              fontStyle: "italic",
+              fontSize: "11px",
+              color: scrolled ? "rgba(26,26,46,0.38)" : "rgba(245,243,239,0.38)",
+            }}
+          >
             Curated narratives for the silent stretches
           </span>
         </div>
         <a
           href={`mailto:${CONTACT_EMAIL}`}
-          className="font-body font-medium text-sm text-background bg-primary px-5 py-2.5 rounded-full transition-opacity duration-300 ease-out hover:opacity-90"
+          className="inline-flex items-center transition-opacity duration-300 ease-out hover:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#C49A5C]"
+          style={{
+            fontFamily: "var(--font-inter), sans-serif",
+            fontWeight: 500,
+            fontSize: "14px",
+            letterSpacing: "0.01em",
+            color: scrolled ? "#F5F3EF" : "#1B3D2F",
+            backgroundColor: scrolled ? "#1B3D2F" : "#C49A5C",
+            paddingLeft: "20px",
+            paddingRight: "20px",
+            height: "38px",
+            borderRadius: "2px",
+          }}
         >
           Get in touch
         </a>

@@ -1,4 +1,5 @@
-export const CONTACT_EMAIL = "hello@hostatlas.guide";
+export const CONTACT_EMAIL = "connect@hostatlas.guide";
+export const CONTACT_PHONE = "+47 995 95 002";
 
 export const SECTION_IDS = {
   hero: "hero",
