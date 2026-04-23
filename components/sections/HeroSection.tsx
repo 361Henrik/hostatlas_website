@@ -5,7 +5,7 @@ export default function HeroSection() {
   return (
     <section
       id={SECTION_IDS.hero}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
     >
       {/* ── Background image ─────────────────────────────────────── */}
       <Image
@@ -25,9 +25,9 @@ export default function HeroSection() {
         aria-hidden="true"
       />
 
-      {/* ── Content — centred ────────────────────────────────────── */}
+      {/* ── Content — left-aligned ───────────────────────────────── */}
       <div
-        className="relative text-center px-6 max-w-[720px] mx-auto"
+        className="relative px-8 md:px-16 lg:px-24 max-w-[640px]"
         style={{ zIndex: 2 }}
       >
         {/* Overline */}
@@ -50,14 +50,14 @@ export default function HeroSection() {
           style={{
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 500,
-            fontSize: "clamp(36px, 5vw, 56px)",
-            lineHeight: 1.1,
+            fontSize: "clamp(44px, 6vw, 76px)",
+            lineHeight: 1.05,
             letterSpacing: "-0.02em",
             color: "#F5F3EF",
-            marginBottom: "24px",
+            marginBottom: "28px",
           }}
         >
-          &ldquo;What&rsquo;s that over there?&rdquo;
+          &ldquo;What&rsquo;s that<br />over there?&rdquo;
         </h1>
 
         {/* Sub-headline — italic */}
@@ -66,13 +66,13 @@ export default function HeroSection() {
             fontFamily: "var(--font-playfair), serif",
             fontWeight: 400,
             fontStyle: "italic",
-            fontSize: "clamp(18px, 2vw, 22px)",
+            fontSize: "clamp(18px, 2vw, 24px)",
             lineHeight: 1.45,
             color: "rgba(245,243,239,0.82)",
             marginBottom: "20px",
           }}
         >
-          The question every guest asks. The one that rarely gets answered.
+          The question every guest asks.<br />The one that rarely gets answered.
         </p>
 
         {/* Tagline — bronze */}
@@ -92,14 +92,13 @@ export default function HeroSection() {
 
         {/* Body */}
         <p
-          className="mx-auto"
           style={{
             fontFamily: "var(--font-inter), sans-serif",
             fontWeight: 400,
             fontSize: "18px",
             lineHeight: 1.72,
-            color: "rgba(245,243,239,0.78)",
-            maxWidth: "48ch",
+            color: "rgba(245,243,239,0.72)",
+            maxWidth: "44ch",
           }}
         >
           The Host Atlas brings the landscape to life for guests on river
@@ -120,7 +119,7 @@ export default function HeroSection() {
             fontSize: "10px",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
-            color: "rgba(245,243,239,0.4)",
+            color: "rgba(245,243,239,0.35)",
           }}
         >
           Scroll
@@ -130,26 +129,10 @@ export default function HeroSection() {
           height="24"
           viewBox="0 0 16 24"
           fill="none"
-          style={{ color: "rgba(245,243,239,0.4)" }}
+          style={{ color: "rgba(245,243,239,0.35)" }}
         >
-          <rect
-            x="1"
-            y="1"
-            width="14"
-            height="22"
-            rx="7"
-            stroke="currentColor"
-            strokeWidth="1.2"
-          />
-          <rect
-            x="7"
-            y="5"
-            width="2"
-            height="5"
-            rx="1"
-            fill="currentColor"
-            className="animate-bounce"
-          />
+          <rect x="1" y="1" width="14" height="22" rx="7" stroke="currentColor" strokeWidth="1.2" />
+          <rect x="7" y="5" width="2" height="5" rx="1" fill="currentColor" className="animate-bounce" />
         </svg>
       </div>
     </section>

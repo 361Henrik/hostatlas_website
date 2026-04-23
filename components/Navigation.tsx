@@ -34,24 +34,25 @@ export default function Navigation() {
         borderColor: scrolled ? "rgba(26,26,46,0.1)" : "transparent",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo + tagline */}
-        <div className="flex flex-col gap-0.5">
+        <div className="flex flex-col gap-1">
+          {/* 1536×1024 native ratio — rendered at 60px tall = 90px wide */}
           <Image
             src={scrolled ? "/images/logo-dark.png" : "/images/logo-light.png"}
             alt="The Host Atlas"
-            width={180}
-            height={54}
+            width={1536}
+            height={1024}
             priority
-            className="h-[54px] w-auto"
+            className="h-[60px] w-auto"
           />
           <span
             className="hidden md:block"
             style={{
               fontFamily: "var(--font-playfair), serif",
               fontStyle: "italic",
-              fontSize: "12px",
-              color: scrolled ? "rgba(196,154,92,0.45)" : "rgba(196,154,92,0.45)",
+              fontSize: "11px",
+              color: "rgba(196,154,92,0.55)",
             }}
           >
             Curated narratives for the silent stretches
